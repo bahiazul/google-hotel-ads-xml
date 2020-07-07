@@ -1,0 +1,12 @@
+{
+  "overrides": [
+    {
+      "files": "*.php",
+      "options": {
+        "printWidth": 80,
+        "trailingCommaPHP": true,
+        "singleQuote": true
+      }
+    }
+  ]
+}
