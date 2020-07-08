@@ -2,9 +2,6 @@
     "name": "bahiazul/google-hotel-ads-xml",
     "description": "Set of PHP classes intended to be mapped when reading and writing Google Hotel Ads XML requests and responses using Sabre's XML suite.",
     "type": "library",
-    "suggest": {
-        "sabre/xml": "^2.2"
-    },
     "license": "MIT",
     "authors": [
         {

@@ -2,8 +2,6 @@
 
 namespace Bahiazul\GoogleHotelAds\Xml;
 
-use Sabre\Xml;
-
 class OccupancyDetails extends Base
 {
     /**
@@ -56,18 +54,4 @@ class OccupancyDetails extends Base
      * @var Result[]
      */
     public $result;
-
-    /**
-     * @inheritDoc
-     */
-    public static function xmlSerialize(Writer $writer)
-    {
-    }
-
-    /**
-     * @inheritDoc
-     */
-    public static function xmlDeserialize(Reader $reader)
-    {
-    }
 }

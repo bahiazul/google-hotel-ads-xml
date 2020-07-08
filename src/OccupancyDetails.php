@@ -2,8 +2,6 @@
 
 namespace Bahiazul\GoogleHotelAds\Xml;
 
-use Sabre\Xml;
-
 class OccupancyDetails extends Base
 {
     /**
