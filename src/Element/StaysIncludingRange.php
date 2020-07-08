@@ -17,7 +17,7 @@ class StaysIncludingRange
      *
      * @var string
      */
-    public $firstDate;
+    public $FirstDate;
 
     /**
      * The last date of the date range for a check-in range or ranged stay Hint Response message. Dates are inclusive.
@@ -26,5 +26,5 @@ class StaysIncludingRange
      *
      * @var string
      */
-    public $lastDate;
+    public $LastDate;
 }

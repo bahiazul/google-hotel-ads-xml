@@ -24,7 +24,7 @@ class Item
      *
      * @var string[]
      */
-    public $property = [];
+    public $Property = [];
 
     /**
      * A container for the <CheckinDate> and <LengthOfStay> elements in an exact
@@ -33,7 +33,7 @@ class Item
      *
      * @var Stay
      */
-    public $stay;
+    public $Stay;
 
     /**
      * A container for the <FirstDate> and <LastDate> elements in a ranged stay
@@ -41,7 +41,7 @@ class Item
      *
      * @var StaysIncludingRange
      */
-    public $staysIncludingRange;
+    public $StaysIncludingRange;
 
     /**
      * The first date of the date range for a check-in range or ranged stay Hint
@@ -49,7 +49,7 @@ class Item
      *
      * @var string
      */
-    public $firstDate;
+    public $FirstDate;
 
     /**
      * The last date of the date range for a check-in range or ranged stay Hint
@@ -59,5 +59,5 @@ class Item
      *
      * @var string
      */
-    public $lastDate;
+    public $LastDate;
 }

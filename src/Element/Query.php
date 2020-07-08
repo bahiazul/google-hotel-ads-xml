@@ -45,14 +45,14 @@ class Query
      *
      * @var string
      */
-    public $checkin;
+    public $Checkin;
 
     /**
      * The number of nights for a particular itinerary, up to 14.
      *
      * @var int
      */
-    public $nights;
+    public $Nights;
 
     /**
      * The start date for a range of itineraries to which the pricing applies.
@@ -61,7 +61,7 @@ class Query
      *
      * @var string
      */
-    public $firstDate;
+    public $FirstDate;
 
     /**
      * The end date for a range of itineraries to which the pricing applies.
@@ -70,7 +70,7 @@ class Query
      *
      * @var string
      */
-    public $lastDate;
+    public $LastDate;
 
     /**
      * The number of nights for a ranged stay. This element is used only for
@@ -78,7 +78,7 @@ class Query
      *
      * @var int
      */
-    public $affectedNights;
+    public $AffectedNights;
 
     /**
      * One or more IDs for hotel that require pricing updates.
@@ -93,7 +93,7 @@ class Query
      *
      * @var PropertyList
      */
-    public $propertyList;
+    public $PropertyList;
 
     /**
      * The amount of time, in milliseconds, that you have to respond to a Live
@@ -110,7 +110,7 @@ class Query
      *
      * @var int
      */
-    public $deadlineMs;
+    public $DeadlineMs;
 
     /**
      * For Live Queries, specifies certain parameters under which the query is
@@ -128,7 +128,7 @@ class Query
      *
      * @var Context[]
      */
-    public $context;
+    public $Context = [];
 
     /**
      * One or more properties for which Google wants updated room and Room
@@ -137,5 +137,5 @@ class Query
      *
      * @var string
      */
-    public $hotelInfoProperties;
+    public $HotelInfoProperties;
 }

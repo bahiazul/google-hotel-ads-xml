@@ -14,5 +14,5 @@ abstract class LocalisedText
     /**
      * @var Text[]
      */
-    public $text = [];
+    public $Text = [];
 }

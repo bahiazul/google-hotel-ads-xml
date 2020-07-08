@@ -22,7 +22,7 @@ class RoomData
      *
      * @var string
      */
-    public $roomID;
+    public $RoomID;
 
     /**
      * The name of the category of room. This value should match what appears
@@ -47,7 +47,7 @@ class RoomData
      *
      * @var Name
      */
-    public $name;
+    public $Name;
 
     /**
      * A detailed description of the room. This element should contain
@@ -74,7 +74,7 @@ class RoomData
      *
      * @var Description
      */
-    public $description;
+    public $Description;
 
     /**
      * The maximum number of guests that a room can physically accommodate. For
@@ -90,7 +90,7 @@ class RoomData
      *
      * @var int
      */
-    public $capacity;
+    public $Capacity;
 
     /**
      * A URL and optional caption for a photo of the given room or Room Bundle.
@@ -116,5 +116,5 @@ class RoomData
      *
      * @var PhotoURL[]
      */
-    public $photoURL = [];
+    public $PhotoURL = [];
 }

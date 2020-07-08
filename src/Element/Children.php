@@ -3,7 +3,7 @@
 namespace Bahiazul\GoogleHotelAds\Xml\Element;
 
 /**
- * AllowablePointsOfSale
+ * Children
  *
  * @author Javier Zapata <javierzapata82@gmail.com> (https://javi.io)
  * @license MIT
@@ -14,5 +14,5 @@ class Children
     /**
      * @var Child[]
      */
-    public $child = [];
+    public $Child = [];
 }

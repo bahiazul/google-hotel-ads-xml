@@ -38,5 +38,5 @@ class Hint
      *
      * @var Item[]
      */
-    public $item = [];
+    public $Item = [];
 }

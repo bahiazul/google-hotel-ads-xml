@@ -14,5 +14,5 @@ class Rates
     /**
      * @var Rate[]
      */
-    public $rate = [];
+    public $Rate = [];
 }

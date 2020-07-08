@@ -3,7 +3,7 @@
 namespace Bahiazul\GoogleHotelAds\Xml\Element;
 
 /**
- * AllowablePointsOfSale
+ * Baserate
  *
  * @author Javier Zapata <javierzapata82@gmail.com> (https://javi.io)
  * @license MIT

@@ -30,7 +30,7 @@ class Context
      *
      * @var string
      */
-    public $userCountry;
+    public $UserCountry;
 
     /**
      * Filters rates by the type of the device the user is searching from.
@@ -45,5 +45,5 @@ class Context
      *
      * @var string
      */
-    public $userDevice;
+    public $UserDevice;
 }

@@ -18,7 +18,7 @@ class PropertyDataSet
      *
      * @var string
      */
-    public $property;
+    public $Property;
 
     /**
      * Describes a room. This data is associated with a partner and hotel,
@@ -28,7 +28,7 @@ class PropertyDataSet
      *
      * @var RoomData[]
      */
-    public $roomData = [];
+    public $RoomData = [];
 
     /**
      * Describes a Room Bundle. This data is associated with a partner and
@@ -42,5 +42,5 @@ class PropertyDataSet
      *
      * @var PackageData[]
      */
-    public $packageData = [];
+    public $PackageData = [];
 }

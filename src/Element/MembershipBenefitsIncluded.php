@@ -16,19 +16,19 @@ class MembershipBenefitsIncluded
      *
      * @var ProgramName
      */
-    public $programName;
+    public $ProgramName;
 
     /**
      * Level of the program, e.g., “Gold.”
      *
      * @var ProgramLevel
      */
-    public $programLevel;
+    public $ProgramLevel;
 
     /**
      * (optional) Nightly value of the benefits.
      *
      * @var NightlyValue
      */
-    public $nightlyValue;
+    public $NightlyValue;
 }

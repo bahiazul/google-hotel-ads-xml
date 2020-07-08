@@ -70,7 +70,7 @@ class Rate
      *
      * @var Refundable
      */
-    public $refundable;
+    public $Refundable;
 
     /**
      * The date and time at which the rate is considered expired. This element
@@ -78,7 +78,7 @@ class Rate
      *
      * @var DateTime
      */
-    public $expirationTime;
+    public $ExpirationTime;
 
     /**
      * When and where the user pays for a booking. This element uses the same
@@ -86,7 +86,7 @@ class Rate
      *
      * @var string
      */
-    public $chargeCurrency;
+    public $ChargeCurrency;
 
     /**
      * One or more landing pages that are eligible for the hotel. This element
@@ -94,5 +94,5 @@ class Rate
      *
      * @var AllowablePointsOfSale
      */
-    public $allowablePointsOfSale;
+    public $AllowablePointsOfSale;
 }

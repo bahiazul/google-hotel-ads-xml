@@ -24,7 +24,7 @@ class RoomBundle
      *
      * @var string
      */
-    public $packageID;
+    public $PackageID;
 
     /**
      * The Rate Plan ID represents the unique identifier for a room and package
@@ -37,7 +37,7 @@ class RoomBundle
      *
      * @var string
      */
-    public $ratePlanID;
+    public $RatePlanID;
 
     /**
      * Enables listing a rate as being fully refundable or providing a free
@@ -85,7 +85,7 @@ class RoomBundle
      *
      * @var Refundable
      */
-    public $refundable;
+    public $Refundable;
 
     /**
      * The unique ID for the room data. Use this ID to match the Room Bundle
@@ -96,7 +96,7 @@ class RoomBundle
      *
      * @var string
      */
-    public $roomID;
+    public $RoomID;
 
     /**
      * Rates that override the defaults for this Room Bundle. This element uses
@@ -104,7 +104,7 @@ class RoomBundle
      *
      * @var Rates
      */
-    public $rates;
+    public $Rates;
 
     /**
      * A container for information on priced physical descriptions of a room,
@@ -119,7 +119,7 @@ class RoomBundle
      *
      * @var RoomBundle
      */
-    public $roombundle;
+    public $RoomBundle;
 
     /**
      * One or more landing pages that are eligible for the hotel. A landing page
@@ -134,5 +134,5 @@ class RoomBundle
      *
      * @var AllowablePointsOfSale
      */
-    public $allowablePointsOfSale;
+    public $AllowablePointsOfSale;
 }

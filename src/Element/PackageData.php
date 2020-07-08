@@ -24,7 +24,7 @@ class PackageData
      *
      * @var string
      */
-    public $packageID;
+    public $PackageID;
 
     /**
      * The name of the category of room. This value should match what appears
@@ -43,7 +43,7 @@ class PackageData
      *
      * @var Name
      */
-    public $name;
+    public $Name;
 
     /**
      * A detailed description of the package. This element should contain
@@ -63,7 +63,7 @@ class PackageData
      *
      * @var Description
      */
-    public $description;
+    public $Description;
 
     /**
      * Enables listing a rate as being fully refundable or providing a free
@@ -111,7 +111,7 @@ class PackageData
      *
      * @var Refundable
      */
-    public $refundable;
+    public $Refundable;
 
     /**
      * When and where the user pays for a booking. This element uses the same
@@ -121,14 +121,14 @@ class PackageData
      *
      * @var string
      */
-    public $chargeCurrency;
+    public $ChargeCurrency;
 
     /**
      * Specifies whether this Room Bundle includes breakfast with the rate.
      *
      * @var boolean
      */
-    public $breakfastIncluded;
+    public $BreakfastIncluded;
 
     /**
      * If a Room Bundle includes internet access at no charge, while other
@@ -139,7 +139,7 @@ class PackageData
      *
      * @var boolean
      */
-    public $internetIncluded;
+    public $InternetIncluded;
 
     /**
      * Whether a Room Bundle includes parking at no charge, where parking would
@@ -150,7 +150,7 @@ class PackageData
      *
      * @var bool
      */
-    public $parkingIncluded;
+    public $ParkingIncluded;
 
     /**
      * Rate includes elite status benefits for duration of stay. Includes the
@@ -162,14 +162,14 @@ class PackageData
      *
      * @var MembershipBenefitsIncluded
      */
-    public $membershipBenefitsIncluded;
+    public $MembershipBenefitsIncluded;
 
     /**
      * Rate includes free car rental for duration of stay.
      *
      * @var bool
      */
-    public $carRentalIncluded;
+    public $CarRentalIncluded;
 
     /**
      * Rate includes frequent flyer miles. Parameters include:
@@ -179,7 +179,7 @@ class PackageData
      *
      * @var MilesIncluded
      */
-    public $milesIncluded;
+    public $MilesIncluded;
 
     /**
      * Rate includes on-property credit (F&B, resort, spa, etc). Parameter:
@@ -188,5 +188,5 @@ class PackageData
      *
      * @var OnPropertyCredit
      */
-    public $onPropertyCredit;
+    public $OnPropertyCredit;
 }

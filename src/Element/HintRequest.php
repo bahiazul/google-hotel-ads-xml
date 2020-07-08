@@ -44,5 +44,5 @@ class HintRequest
      *
      * @var DateTime
      */
-    public $lastFetchTime;
+    public $LastFetchTime;
 }

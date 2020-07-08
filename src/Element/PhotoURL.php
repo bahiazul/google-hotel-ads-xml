@@ -17,7 +17,7 @@ class PhotoURL
      *
      * @var string
      */
-    public $url;
+    public $URL;
 
     /**
      * Defines the caption for the photo. This element takes a single child
@@ -27,5 +27,5 @@ class PhotoURL
      *
      * @var Caption
      */
-    public $caption;
+    public $Caption;
 }

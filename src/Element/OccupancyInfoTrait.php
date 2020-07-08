@@ -38,7 +38,7 @@ trait OccupancyInfoTrait
      *
      * @var int
      */
-    public $occupancy;
+    public $Occupancy;
 
     /**
      * Specifies the maximum number of guests for a room or package.
@@ -64,5 +64,5 @@ trait OccupancyInfoTrait
      *
      * @var OccupancyDetails
      */
-    public $occupancyDetails;
+    public $OccupancyDetails;
 }

@@ -16,5 +16,5 @@ class OnPropertyCredit
      *
      * @var Amount
      */
-    public $amount;
+    public $Amount;
 }

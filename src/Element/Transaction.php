@@ -50,7 +50,7 @@ class OccupancyDetails
      *
      * @var PropertyDataSet
      */
-    public $propertyDataSet;
+    public $PropertyDataSet;
 
     /**
      * Pricing data for a room's itinerary or a <RoomBundle> element that
@@ -60,5 +60,5 @@ class OccupancyDetails
      *
      * @var Result[]
      */
-    public $result;
+    public $Result;
 }

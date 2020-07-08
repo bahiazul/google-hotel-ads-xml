@@ -14,5 +14,5 @@ class PropertyList
     /**
      * @var string[]
      */
-    public $property = [];
+    public $Property = [];
 }

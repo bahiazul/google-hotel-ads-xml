@@ -19,33 +19,33 @@ trait CustomInfoTrait
      *
      * @var string
      */
-    public $custom1;
+    public $Custom1;
 
     /**
-     * @see self::$custom1
+     * @see self::$Custom1
      *
      * @var string
      */
-    public $custom2;
+    public $Custom2;
 
     /**
-     * @see self::$custom1
+     * @see self::$Custom1
      *
      * @var string
      */
-    public $custom3;
+    public $Custom3;
 
     /**
-     * @see self::$custom1
+     * @see self::$Custom1
      *
      * @var string
      */
-    public $custom4;
+    public $Custom4;
 
     /**
-     * @see self::$custom1
+     * @see self::$Custom1
      *
      * @var string
      */
-    public $custom5;
+    public $Custom5;
 }

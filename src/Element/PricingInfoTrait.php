@@ -50,7 +50,7 @@ trait PricingInfoTrait
      *
      * @var Baserate
      */
-    public $baserate;
+    public $Baserate;
 
     /**
      * The taxes that are calculated for the final price of a room. The <Tax>
@@ -60,7 +60,7 @@ trait PricingInfoTrait
      *
      * @var Tax
      */
-    public $tax;
+    public $Tax;
 
     /**
      * Fees other than the base rate and taxes that influence the final price of
@@ -72,5 +72,5 @@ trait PricingInfoTrait
      *
      * @var OtherFees
      */
-    public $otherFees;
+    public $OtherFees;
 }

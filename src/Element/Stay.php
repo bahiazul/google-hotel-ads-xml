@@ -16,12 +16,12 @@ class Stay
      *
      * @var string
      */
-    public $checkInDate;
+    public $CheckInDate;
 
     /**
      * The number of nights for the itinerary, expressed as a positive integer.
      *
      * @var int
      */
-    public $lengthOfStay;
+    public $LengthOfStay;
 }

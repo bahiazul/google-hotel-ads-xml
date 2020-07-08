@@ -16,12 +16,12 @@ class OccupancyDetails
      *
      * @var int
      */
-    public $numAdults;
+    public $NumAdults;
 
     /**
      * Whether any guests are children.
      *
      * @var Children
      */
-    public $children;
+    public $Children;
 }

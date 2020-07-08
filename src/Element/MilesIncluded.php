@@ -16,12 +16,12 @@ class MilesIncluded
      *
      * @var int
      */
-    public $numberofMiles;
+    public $NumberofMiles;
 
     /**
      * Frequent flyer miles provide
      *
      * @var Provider
      */
-    public $provider;
+    public $Provider;
 }

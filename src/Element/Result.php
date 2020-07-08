@@ -23,7 +23,7 @@ class Result
      *
      * @var string
      */
-    public $property;
+    public $Property;
 
     /**
      * The check-in date for an itinerary using the Date format. The combination
@@ -31,7 +31,7 @@ class Result
      *
      * @var string
      */
-    public $checkin;
+    public $Checkin;
 
     /**
      * The number of nights for an itinerary. The value of the <Nights> element
@@ -40,7 +40,7 @@ class Result
      *
      * @var int
      */
-    public $nights;
+    public $Nights;
 
     /**
      * Enables listing a rate as being fully refundable or providing a free
@@ -88,7 +88,7 @@ class Result
      *
      * @var Refundable
      */
-    public $refundable;
+    public $Refundable;
 
     /**
      * The unique ID of the room to map it to pre-defined room or package data.
@@ -96,7 +96,7 @@ class Result
      *
      * @var string
      */
-    public $roomID;
+    public $RoomID;
 
     /**
      * The date and time at which the price is considered expired (3 hours
@@ -110,7 +110,7 @@ class Result
      *
      * @var DateTime
      */
-    public $expirationTime;
+    public $ExpirationTime;
 
     /**
      * When and where the user pays for a booking. This element can be used in
@@ -137,7 +137,7 @@ class Result
      *
      * @var string
      */
-    public $chargeCurrency;
+    public $ChargeCurrency;
 
     /**
      * A container for one or more <Rate> blocks. Each <Rate> in <Rates> defines
@@ -149,7 +149,7 @@ class Result
      *
      * @var Rates
      */
-    public $rates;
+    public $Rates;
 
     /**
      * A container for information on priced physical descriptions of a room,
@@ -164,7 +164,7 @@ class Result
      *
      * @var RoomBundle
      */
-    public $roombundle;
+    public $RoomBundle;
 
     /**
      * One or more landing pages that are eligible for the hotel. A landing page
@@ -179,5 +179,5 @@ class Result
      *
      * @var AllowablePointsOfSale
      */
-    public $allowablePointsOfSale;
+    public $AllowablePointsOfSale;
 }
