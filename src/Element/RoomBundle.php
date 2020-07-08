@@ -11,6 +11,7 @@ namespace Bahiazul\GoogleHotelAds\Xml\Element;
  */
 class RoomBundle extends Base
 {
+    use CustomInfoTrait;
     use OccupancyInfoTrait;
     use PricingInfoTrait;
 
@@ -134,34 +135,4 @@ class RoomBundle extends Base
      * @var AllowablePointsOfSale
      */
     public $allowablePointsOfSale;
-
-    /**
-     * Custom fields for passing additional data to the landing pages for the
-     * Room Bundle. These elements use the same syntax as <Custom[1-5]> in
-     * <Result>. There is a limit of 200 characters per custom field. For more
-     * information, refer to landing page files.
-     *
-     * @var string
-     */
-    public $custom1;
-
-    /**
-     * @see self::$custom1
-     */
-    public $custom2;
-
-    /**
-     * @see self::$custom1
-     */
-    public $custom3;
-
-    /**
-     * @see self::$custom1
-     */
-    public $custom4;
-
-    /**
-     * @see self::$custom1
-     */
-    public $custom5;
 }

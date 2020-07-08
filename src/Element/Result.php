@@ -11,6 +11,7 @@ namespace Bahiazul\GoogleHotelAds\Xml\Element;
  */
 class Result extends Base
 {
+    use CustomInfoTrait;
     use OccupancyInfoTrait;
     use PricingInfoTrait;
 
@@ -179,38 +180,4 @@ class Result extends Base
      * @var AllowablePointsOfSale
      */
     public $allowablePointsOfSale;
-
-    /**
-     * Defines a custom field that you can use to pass additional data
-     * associated with a hotel.
-     *
-     * The <Custom> elements let you pass arbitrary data. For example, you can
-     * specify a value in this field that will then be used by the landing pages
-     * file to construct a custom URL for a landing page. There is a limit of
-     * 200 characters per custom field. For more information, refer to landing
-     * page files.
-     *
-     * @var string
-     */
-    public $custom1;
-
-    /**
-     * @see self::$custom1
-     */
-    public $custom2;
-
-    /**
-     * @see self::$custom1
-     */
-    public $custom3;
-
-    /**
-     * @see self::$custom1
-     */
-    public $custom4;
-
-    /**
-     * @see self::$custom1
-     */
-    public $custom5;
 }
