@@ -12,7 +12,7 @@ namespace Bahiazul\GoogleHotelAds\Xml\Element;
  * corresponding property/itinerary. Each property/itinerary should have a
  * single <Result> block with the prices for multiple occupancies included.
  *
- * @author Javier Zapata <javierzapata82@gmail.com> (https://javi.io)
+ * @author Javier Zapata <javierzapata82@gmail.com> (https://javi.io/)
  * @license MIT
  * @copyright Copyright (C) Centronor Siglo XXI (https://bahiazul.com/)
  */

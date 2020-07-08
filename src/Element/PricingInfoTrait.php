@@ -48,7 +48,7 @@ trait PricingInfoTrait
      * * currency: The 3-letter currency code. For example, "USD" for US
      *   dollars.
      *
-     * @var Baserate
+     * @var MonetaryValue
      */
     public $Baserate;
 
@@ -58,7 +58,7 @@ trait PricingInfoTrait
      * three-letter currency code for the taxes. For example, "USD". The <Tax>
      * element is required if <Baserate> is greater than zero.
      *
-     * @var Tax
+     * @var MonetaryValue
      */
     public $Tax;
 
@@ -70,7 +70,7 @@ trait PricingInfoTrait
      *
      * The <OtherFees> element is required if <Baserate> is greater than zero.
      *
-     * @var OtherFees
+     * @var MonetaryValue
      */
     public $OtherFees;
 }

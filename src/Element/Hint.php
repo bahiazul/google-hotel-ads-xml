@@ -27,7 +27,7 @@ namespace Bahiazul\GoogleHotelAds\Xml\Element;
  *
  * For more information, consult Hint Response Messages.
  *
- * @author Javier Zapata <javierzapata82@gmail.com> (https://javi.io)
+ * @author Javier Zapata <javierzapata82@gmail.com> (https://javi.io/)
  * @license MIT
  * @copyright Copyright (C) Centronor Siglo XXI (https://bahiazul.com/)
  */

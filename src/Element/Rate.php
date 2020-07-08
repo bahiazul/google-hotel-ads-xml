@@ -5,16 +5,12 @@ namespace Bahiazul\GoogleHotelAds\Xml\Element;
 /**
  * Rate
  *
- * @author Javier Zapata <javierzapata82@gmail.com> (https://javi.io)
+ * @author Javier Zapata <javierzapata82@gmail.com> (https://javi.io/)
  * @license MIT
  * @copyright Copyright (C) Centronor Siglo XXI (https://bahiazul.com/)
  */
 class Rate
 {
-    use CustomInfoTrait;
-    use OccupancyInfoTrait;
-    use PricingInfoTrait;
-
     /**
      * For conditional rates, this ID matches a rate to a definition in your
      * Rate Rule Definition file. The character limit for this field is 40
@@ -23,6 +19,8 @@ class Rate
      * @var string
      */
     public $rate_rule_id;
+
+    use PricingInfoTrait;
 
     /**
      * Enables listing a rate as being fully refundable or providing a free
@@ -92,7 +90,11 @@ class Rate
      * One or more landing pages that are eligible for the hotel. This element
      * uses the same syntax as the <AllowablePointsOfSale> on <Result>.
      *
-     * @var AllowablePointsOfSale
+     * @var PointOfSale[]
      */
-    public $AllowablePointsOfSale;
+    public $AllowablePointsOfSale = [];
+
+    use OccupancyInfoTrait;
+
+    use CustomInfoTrait;
 }

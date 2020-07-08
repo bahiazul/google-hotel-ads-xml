@@ -5,14 +5,12 @@ namespace Bahiazul\GoogleHotelAds\Xml\Element;
 /**
  * PackageData
  *
- * @author Javier Zapata <javierzapata82@gmail.com> (https://javi.io)
+ * @author Javier Zapata <javierzapata82@gmail.com> (https://javi.io/)
  * @license MIT
  * @copyright Copyright (C) Centronor Siglo XXI (https://bahiazul.com/)
  */
 class PackageData
 {
-    use OccupancyInfoTrait;
-
     /**
      * The unique ID for the package. Use this ID to match the Room Bundle data
      * with the <Result> blocks in your pricing updates. For more information,
@@ -41,9 +39,9 @@ class PackageData
      *     <Text text="Lit et petit déjeuné" language="fr"/>
      *   </Name>
      *
-     * @var Name
+     * @var Text[]
      */
-    public $Name;
+    public $Name = [];
 
     /**
      * A detailed description of the package. This element should contain
@@ -61,9 +59,9 @@ class PackageData
      *     <Text text="Deux certificats petit-déjeuner buffet pour chaque nuit de séjour." language="fr"/>
      *   </Description>
      *
-     * @var Description
+     * @var Text[]
      */
-    public $Description;
+    public $Description = [];
 
     /**
      * Enables listing a rate as being fully refundable or providing a free
@@ -122,6 +120,8 @@ class PackageData
      * @var string
      */
     public $ChargeCurrency;
+
+    use OccupancyInfoTrait;
 
     /**
      * Specifies whether this Room Bundle includes breakfast with the rate.

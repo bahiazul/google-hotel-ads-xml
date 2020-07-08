@@ -5,16 +5,12 @@ namespace Bahiazul\GoogleHotelAds\Xml\Element;
 /**
  * Result
  *
- * @author Javier Zapata <javierzapata82@gmail.com> (https://javi.io)
+ * @author Javier Zapata <javierzapata82@gmail.com> (https://javi.io/)
  * @license MIT
  * @copyright Copyright (C) Centronor Siglo XXI (https://bahiazul.com/)
  */
 class Result
 {
-    use CustomInfoTrait;
-    use OccupancyInfoTrait;
-    use PricingInfoTrait;
-
     /**
      * The ID of a hotel affected by the associated data (price, itinerary,
      * Room Bundle, or metadata). The value of this element must be a string.
@@ -41,6 +37,8 @@ class Result
      * @var int
      */
     public $Nights;
+
+    use PricingInfoTrait;
 
     /**
      * Enables listing a rate as being fully refundable or providing a free
@@ -139,6 +137,8 @@ class Result
      */
     public $ChargeCurrency;
 
+    use OccupancyInfoTrait;
+
     /**
      * A container for one or more <Rate> blocks. Each <Rate> in <Rates> defines
      * a different price for the room/itinerary combination.
@@ -177,7 +177,9 @@ class Result
      * landing pages file are considered eligible to be used for booking the
      * room. For more information, refer to Landing Pages File Syntax.
      *
-     * @var AllowablePointsOfSale
+     * @var PointOfSale[]
      */
-    public $AllowablePointsOfSale;
+    public $AllowablePointsOfSale = [];
+
+    use CustomInfoTrait;
 }

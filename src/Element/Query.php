@@ -25,7 +25,7 @@ namespace Bahiazul\GoogleHotelAds\Xml\Element;
  * The syntax for the messages is different, depending on the type. Both types
  * are described in this section.
  *
- * @author Javier Zapata <javierzapata82@gmail.com> (https://javi.io)
+ * @author Javier Zapata <javierzapata82@gmail.com> (https://javi.io/)
  * @license MIT
  * @copyright Copyright (C) Centronor Siglo XXI (https://bahiazul.com/)
  */
@@ -54,23 +54,7 @@ class Query
      */
     public $Nights;
 
-    /**
-     * The start date for a range of itineraries to which the pricing applies.
-     * This element is used only for Check-in Date Range pricing queries used
-     * with Pull with Hints.
-     *
-     * @var string
-     */
-    public $FirstDate;
-
-    /**
-     * The end date for a range of itineraries to which the pricing applies.
-     * This element is used only for Check-in Date Range pricing queries used
-     * with Pull + Hints.
-     *
-     * @var string
-     */
-    public $LastDate;
+    use DateRangeTrait;
 
     /**
      * The number of nights for a ranged stay. This element is used only for
@@ -91,9 +75,9 @@ class Query
      *     <Property>pid2</Property>
      *   </PropertyList>
      *
-     * @var PropertyList
+     * @var Property[]
      */
-    public $PropertyList;
+    public $PropertyList = [];
 
     /**
      * The amount of time, in milliseconds, that you have to respond to a Live

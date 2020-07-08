@@ -5,14 +5,12 @@ namespace Bahiazul\GoogleHotelAds\Xml\Element;
 /**
  * RoomData
  *
- * @author Javier Zapata <javierzapata82@gmail.com> (https://javi.io)
+ * @author Javier Zapata <javierzapata82@gmail.com> (https://javi.io/)
  * @license MIT
  * @copyright Copyright (C) Centronor Siglo XXI (https://bahiazul.com/)
  */
 class RoomData
 {
-    use OccupancyInfoTrait;
-
     /**
      * The unique ID for the room. Use this ID to match the room data with the
      * <Result> blocks in your pricing updates. For more information, refer to
@@ -91,6 +89,8 @@ class RoomData
      * @var int
      */
     public $Capacity;
+
+    use OccupancyInfoTrait;
 
     /**
      * A URL and optional caption for a photo of the given room or Room Bundle.
