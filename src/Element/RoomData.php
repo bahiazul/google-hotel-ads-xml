@@ -114,7 +114,7 @@ class RoomData extends Base
      *     </Caption>
      *   </PhotoURL>
      *
-     * @var PhotoURL
+     * @var PhotoURL[]
      */
-    public $photoURL;
+    public $photoURL = [];
 }

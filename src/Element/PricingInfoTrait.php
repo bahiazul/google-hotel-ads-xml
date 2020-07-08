@@ -5,7 +5,7 @@ namespace Bahiazul\GoogleHotelAds\Xml\Element;
 /**
  * PricingInfoTrait
  *
- * @author Javier Zapata <javierzapata82@gmail.com> (https://javi.io)
+ * @author Javier Zapata <javierzapata82@gmail.com>
  * @license MIT
  * @copyright Copyright (C) Centronor Siglo XXI (https://bahiazul.com/)
  */

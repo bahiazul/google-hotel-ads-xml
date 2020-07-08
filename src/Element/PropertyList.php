@@ -14,5 +14,5 @@ class PropertyList extends Base
     /**
      * @var string[]
      */
-    public $property;
+    public $property = [];
 }

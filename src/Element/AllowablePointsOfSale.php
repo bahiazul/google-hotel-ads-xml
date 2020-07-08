@@ -14,5 +14,5 @@ class AllowablePointsOfSale
     /**
      * @var PointOfSale[]
      */
-    public $pointOfSale;
+    public $pointOfSale = [];
 }

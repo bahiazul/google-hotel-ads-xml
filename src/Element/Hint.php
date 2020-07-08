@@ -38,5 +38,5 @@ class Hint extends Base
      *
      * @var Item[]
      */
-    public $item;
+    public $item = [];
 }

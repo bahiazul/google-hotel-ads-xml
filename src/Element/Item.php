@@ -24,7 +24,7 @@ class Item extends Base
      *
      * @var string[]
      */
-    public $property;
+    public $property = [];
 
     /**
      * A container for the <CheckinDate> and <LengthOfStay> elements in an exact

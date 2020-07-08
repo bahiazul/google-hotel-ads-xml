@@ -26,9 +26,9 @@ class PropertyDataSet extends Base
      *
      * You reference the room ID in your pricing updates.
      *
-     * @var RoomData
+     * @var RoomData[]
      */
-    public $roomData;
+    public $roomData = [];
 
     /**
      * Describes a Room Bundle. This data is associated with a partner and
@@ -40,7 +40,7 @@ class PropertyDataSet extends Base
      *
      * For more information, refer to {@link https://developers.google.com/hotels/hotel-ads/dev-guide/room-bundles#metadata Room Bundle metadata}.
      *
-     * @var PackageData
+     * @var PackageData[]
      */
-    public $packageData;
+    public $packageData = [];
 }
