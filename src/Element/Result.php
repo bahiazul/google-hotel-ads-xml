@@ -147,9 +147,9 @@ class Result
      * room/itinerary combination. For example, you define multiple rates for
      * conditional rates, private rates, or conditional rates in Room Bundles).
      *
-     * @var Rates
+     * @var Rate[]
      */
-    public $Rates;
+    public $Rates = [];
 
     /**
      * A container for information on priced physical descriptions of a room,

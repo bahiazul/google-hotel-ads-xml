@@ -102,9 +102,9 @@ class RoomBundle
      * Rates that override the defaults for this Room Bundle. This element uses
      * the same syntax as <Rates> in <Result>.
      *
-     * @var Rates
+     * @var Rate[]
      */
-    public $Rates;
+    public $Rates = [];
 
     use CustomInfoTrait;
 }
