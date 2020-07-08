@@ -4,6 +4,8 @@ namespace Bahiazul\GoogleHotelAds\Xml;
 
 class PackageData extends Base
 {
+    use OccupancyInfoTrait;
+
     /**
      * The unique ID for the package. Use this ID to match the Room Bundle data
      * with the <Result> blocks in your pricing updates. For more information,
@@ -27,10 +29,10 @@ class PackageData extends Base
      * and the language attribute specifies a two-letter language code, as the
      * following example shows:
      *
-     *     <Name>
-     *       <Text text="Bed and Breakfast" language="en"/>
-     *       <Text text="Lit et petit déjeuné" language="fr"/>
-     *     </Name>
+     *   <Name>
+     *     <Text text="Bed and Breakfast" language="en"/>
+     *     <Text text="Lit et petit déjeuné" language="fr"/>
+     *   </Name>
      *
      * @var Name
      */
@@ -47,10 +49,10 @@ class PackageData extends Base
      * the description, and the language attribute specifies a two-letter
      * language code, as the following example shows:
      *
-     *     <Description>
-     *       <Text text="Two breakfast buffet certificates for each night of stay." language="en"/>
-     *       <Text text="Deux certificats petit-déjeuner buffet pour chaque nuit de séjour." language="fr"/>
-     *     </Description>
+     *   <Description>
+     *     <Text text="Two breakfast buffet certificates for each night of stay." language="en"/>
+     *     <Text text="Deux certificats petit-déjeuner buffet pour chaque nuit de séjour." language="fr"/>
+     *   </Description>
      *
      * @var Description
      */
@@ -70,7 +72,7 @@ class PackageData extends Base
      * The following example shows the <Refundable> element with all of its
      * attributes set:
      *
-     *     <Refundable available="1" refundable_until_days="7" refundable_until_time="18:00:00"/>
+     *   <Refundable available="1" refundable_until_days="7" refundable_until_time="18:00:00"/>
      *
      * Note: We recommend setting all of the attributes. A feed status warning
      * message is generated when one or more attributes are not set.
@@ -113,37 +115,6 @@ class PackageData extends Base
      * @var string
      */
     public $chargeCurrency;
-
-    /**
-     * The maximum number of guests that a Room Bundle is intended for.
-     * For example, a large suite might be able to physically accommodate
-     * 6 guests, but is intended for up to 4 guests only.
-     * This value must be less than or equal to the <Capacity> element, which
-     * is the number of people that the room can physically accommodate.
-     *
-     * The value of <Occupancy> must be a positive integer between 1 and 20,
-     * inclusive.
-     *
-     * If you specify this element in both <RoomBundle> and <PackageData>,
-     * the value in <RoomBundle> takes precedence.
-     *
-     * Note:
-     * <Occupancy> may be accompanied by <OccupancyDetails>, which specifies
-     * the type of guests (adults or children). Refer to <OccupancyDetails>
-     * for syntax and description of child elements.
-     *
-     * @var int
-     */
-    public $occupancy;
-
-    /**
-     * Specifies the maximum number of guests for a room or package.
-     * <OccupancyDetails> can contain additional information such as the number
-     * and type of guests (adults or children).
-     *
-     * @var OccupancyDetails
-     */
-    public $occupancyDetails;
 
     /**
      * Specifies whether this Room Bundle includes breakfast with the rate.
@@ -195,6 +166,7 @@ class PackageData extends Base
 
     /**
      * Rate includes frequent flyer miles. Parameters include:
+     *
      * * NumberofMiles: Number of miles per itinerary.
      * * Provider: Frequent flyer miles provide.
      *
@@ -204,6 +176,7 @@ class PackageData extends Base
 
     /**
      * Rate includes on-property credit (F&B, resort, spa, etc). Parameter:
+     *
      * * Amount: The value of the credit per itinerary, in local currency.
      *
      * @var OnPropertyCredit

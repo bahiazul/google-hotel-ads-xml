@@ -4,37 +4,8 @@ namespace Bahiazul\GoogleHotelAds\Xml;
 
 class RoomBundle extends Base
 {
-    /**
-     * Defines the price of the Room Bundle for the stay. This element uses the
-     * same syntax as <Baserate> in <Result>, with the following exception:
-     *
-     *  * When the room is unavailable for the itinerary, remove the
-     *    <RoomBundle> element to indicate that a room is no longer in
-     *    inventory. For more information, refer to Removing a Room Bundle.
-     *
-     * @var float
-     */
-    public $baserate;
-
-    /**
-     * The taxes that are calculated for the final price of a room. The <Tax>
-     * element takes a single required attribute, currency, that defines the
-     * three-letter currency code for the taxes. For example, use "USD" for US
-     * dollars.
-     *
-     * @var float
-     */
-    public $tax;
-
-    /**
-     * Fees other than the base rate and taxes that influence the final price of
-     * a room. The <OtherFees> element takes a single required attribute,
-     * currency, that defines the three-letter currency code for the fees. For
-     * example, use "USD" for US dollars.
-     *
-     * @var float
-     */
-    public $otherFees;
+    use OccupancyInfoTrait;
+    use PricingInfoTrait;
 
     /**
      * The unique ID for the package data. Use this ID to match the Room Bundle
@@ -81,25 +52,28 @@ class RoomBundle extends Base
      * If you do not set any attributes, the rate does not display as
      * refundable. The attributes are:
      *
-     *  * available: (Required) Set to 1 or true to indicate if the rate allows
-     *    a full refund; otherwise set to 0 or false.
-     *  * refundable_until_days: (Required if available is true) Specifies the
-     *    number of days in advance of check-in that a full refund can be
-     *    requested. The value of refundable_until_days must be an integer
-     *    between 0 and 330, inclusive.
-     *  * refundable_until_time: (Highly recommended if available is true)
-     *    Specifies the latest time of day, in the local time of the hotel, that
-     *    a full refund request will be honored. This can be combined with
-     *    refundable_until_days to specify, for example, that "refunds are
-     *    available until 4:00PM two days before check-in". If
-     *    refundable_until_time isn't set, the value defaults to midnight.
+     * * available: (Required) Set to 1 or true to indicate if the rate allows
+     *   a full refund; otherwise set to 0 or false.
+     * * refundable_until_days: (Required if available is true) Specifies the
+     *   number of days in advance of check-in that a full refund can be
+     *   requested. The value of refundable_until_days must be an integer
+     *   between 0 and 330, inclusive.
+     * * refundable_until_time: (Highly recommended if available is true)
+     *   Specifies the latest time of day, in the local time of the hotel, that
+     *   a full refund request will be honored. This can be combined with
+     *   refundable_until_days to specify, for example, that "refunds are
+     *   available until 4:00PM two days before check-in". If
+     *   refundable_until_time isn't set, the value defaults to midnight.
      *
-     *    The value of this attribute uses the Time format.
+     *   The value of this attribute uses the Time format.
      *
      * When setting the attributes, note the following:
      *
-     *  * If available or refundable_until_days isn't set, the rate does not display as refundable.
-     *  * If available is 0 or false, the other attributes are ignored. The rate does not display as refundable even if one or both of the other attributes is set.
+     * * If available or refundable_until_days isn't set, the rate does not
+     *   display as refundable.
+     * * If available is 0 or false, the other attributes are ignored. The rate
+     *   does not display as refundable even if one or both of the other
+     *   attributes is set.
      *
      * @var Refundable
      */
@@ -115,41 +89,6 @@ class RoomBundle extends Base
      * @var string
      */
     public $roomID;
-
-    /**
-     * The maximum number of guests for which a Room Bundle is intended. For
-     * example, a large suite might be able to physically accommodate 6 guests,
-     * but the "Honeymoon Package" is intended for 2 guests only.
-     * This value must be less than or equal to the <Capacity>, which is the
-     * number of people that the room can physically accommodate.
-     *
-     * When setting the occupancy in a landing pages file, use the NUM-ADULTS
-     * attribute, as described in Using Variables and Conditions. The default
-     * value is "2".
-     *
-     * The value of <Occupancy> must be a positive integer between 1 and 20,
-     * inclusive.
-     *
-     * Notes:
-     *
-     *  * <Occupancy> may be accompanied by <OccupancyDetails>, which specifies
-     *    the type of guests (adults or children). Consult <OccupancyDetails>
-     *    for syntax and description of child elements.
-     *  * If you specify <Occupancy> in both <RoomBundle> and <PackageData>, the
-     *    value in <RoomBundle> takes precedence.
-     *
-     * @var int
-     */
-    public $occupancy;
-
-    /**
-     * Specifies the maximum number of guests for a room or package.
-     * <OccupancyDetails> can contain additional information such as the number
-     * and type of guests (adults or children).
-     *
-     * @var OccupancyDetails
-     */
-    public $occupancyDetails;
 
     /**
      * Rates that override the defaults for this Room Bundle. This element uses

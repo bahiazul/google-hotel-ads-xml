@@ -4,6 +4,9 @@ namespace Bahiazul\GoogleHotelAds\Xml;
 
 class Rate extends Base
 {
+    use OccupancyInfoTrait;
+    use PricingInfoTrait;
+
     /**
      * For conditional rates, this ID matches a rate to a definition in your
      * Rate Rule Definition file. The character limit for this field is 40
@@ -12,32 +15,6 @@ class Rate extends Base
      * @var string
      */
     public $rate_rule_id;
-
-    /**
-     * The price of the room for the stay. This element uses the same syntax as
-     * the <Baserate> on <Result>.
-     *
-     * Note: The <Baserate> child element under <Rate> cannot be defined as
-     * being unavailable (-1).
-     *
-     * @var float
-     */
-    public $baserate;
-
-    /**
-     * Undocumented variable
-     *
-     * @var float
-     */
-    public $tax;
-
-    /**
-     * Fees other than the base rate and taxes that influence the final price of
-     * a room. This element uses the same syntax as <OtherFees> in a <Result>.
-     *
-     * @var float
-     */
-    public $otherFees;
 
     /**
      * Enables listing a rate as being fully refundable or providing a free
@@ -60,28 +37,28 @@ class Rate extends Base
      * If you do not set any attributes, the rate does not display as
      * refundable. The attributes are:
      *
-     *  * available: (Required) Set to 1 or true to indicate if the rate allows
-     *    a full refund; otherwise set to 0 or false.
-     *  * refundable_until_days: (Required if available is true) Specifies the
-     *    number of days in advance of check-in that a full refund can be
-     *    requested. The value of refundable_until_days must be an integer
-     *    between 0 and 330, inclusive.
-     *  * refundable_until_time: (Highly recommended if available is true)
-     *    Specifies the latest time of day, in the local time of the hotel, that
-     *    a full refund request will be honored. This can be combined with
-     *    refundable_until_days to specify, for example, that "refunds are
-     *    available until 4:00PM two days before check-in". If
-     *    refundable_until_time isn't set, the value defaults to midnight.
+     * * available: (Required) Set to 1 or true to indicate if the rate allows
+     *   a full refund; otherwise set to 0 or false.
+     * * refundable_until_days: (Required if available is true) Specifies the
+     *   number of days in advance of check-in that a full refund can be
+     *   requested. The value of refundable_until_days must be an integer
+     *   between 0 and 330, inclusive.
+     * * refundable_until_time: (Highly recommended if available is true)
+     *   Specifies the latest time of day, in the local time of the hotel, that
+     *   a full refund request will be honored. This can be combined with
+     *   refundable_until_days to specify, for example, that "refunds are
+     *   available until 4:00PM two days before check-in". If
+     *   refundable_until_time isn't set, the value defaults to midnight.
      *
-     *    The value of this attribute uses the Time format.
+     *   The value of this attribute uses the Time format.
      *
      * When setting the attributes, note the following:
      *
-     *  * If available or refundable_until_days isn't set, the rate does not
-     *    display as refundable.
-     *  * If available is 0 or false, the other attributes are ignored. The rate
-     *    does not display as refundable even if one or both of the other
-     *    attributes is set.
+     * * If available or refundable_until_days isn't set, the rate does not
+     *   display as refundable.
+     * * If available is 0 or false, the other attributes are ignored. The rate
+     *   does not display as refundable even if one or both of the other
+     *   attributes is set.
      *
      * @var Refundable
      */
@@ -102,29 +79,6 @@ class Rate extends Base
      * @var string
      */
     public $chargeCurrency;
-
-    /**
-     * Specifies the maximum number of occupants. <Occupancy> may be accompanied
-     * by <OccupancyDetails>, which specifies the type of guests (adults or
-     * children). Consult <OccupancyDetails> for syntax and description of child
-     * elements.
-     *
-     * @var int
-     */
-    public $occupancy;
-
-    /**
-     * Specifies the maximum number of guests for a room or package.
-     * <OccupancyDetails> can contain additional information such as the number
-     * and type of guests (adults or children).
-     *
-     * When <Occupancy> and <OccupancyDetails> appear within the <Rates> element
-     * of <Result> or <RoomBundle>, it means that the rate is constrained by the
-     * occupancy details.
-     *
-     * @var OccupancyDetails
-     */
-    public $occupancyDetails;
 
     /**
      * One or more landing pages that are eligible for the hotel. This element
