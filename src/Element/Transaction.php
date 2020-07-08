@@ -9,7 +9,7 @@ namespace Bahiazul\GoogleHotelAds\Xml\Element;
  * @license MIT
  * @copyright Copyright (C) Centronor Siglo XXI (https://bahiazul.com/)
  */
-class OccupancyDetails extends Base
+class OccupancyDetails
 {
     /**
      * A unique identifier for each Transaction message.

@@ -9,7 +9,7 @@ namespace Bahiazul\GoogleHotelAds\Xml\Element;
  * @license MIT
  * @copyright Copyright (C) Centronor Siglo XXI (https://bahiazul.com/)
  */
-class Result extends Base
+class Result
 {
     use CustomInfoTrait;
     use OccupancyInfoTrait;

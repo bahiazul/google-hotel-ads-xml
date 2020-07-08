@@ -9,7 +9,7 @@ namespace Bahiazul\GoogleHotelAds\Xml\Element;
  * @license MIT
  * @copyright Copyright (C) Centronor Siglo XXI (https://bahiazul.com/)
  */
-class StaysIncludingRange extends Base
+class StaysIncludingRange
 {
     /**
      * The first date of the date range for a check-in range or ranged stay Hint

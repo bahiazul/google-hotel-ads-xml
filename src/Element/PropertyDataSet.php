@@ -9,7 +9,7 @@ namespace Bahiazul\GoogleHotelAds\Xml\Element;
  * @license MIT
  * @copyright Copyright (C) Centronor Siglo XXI (https://bahiazul.com/)
  */
-class PropertyDataSet extends Base
+class PropertyDataSet
 {
     /**
      * The ID of a hotel that the associated data applies to. The value of this

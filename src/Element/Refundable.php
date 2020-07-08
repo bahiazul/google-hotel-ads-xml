@@ -9,7 +9,7 @@ namespace Bahiazul\GoogleHotelAds\Xml\Element;
  * @license MIT
  * @copyright Copyright (C) Centronor Siglo XXI (https://bahiazul.com/)
  */
-class Refundable extends Base
+class Refundable
 {
     /**
      * (Required) Set to 1 or true to indicate if the rate allows a full refund;

@@ -16,7 +16,7 @@ namespace Bahiazul\GoogleHotelAds\Xml\Element;
  * @license MIT
  * @copyright Copyright (C) Centronor Siglo XXI (https://bahiazul.com/)
  */
-class Context extends Base
+class Context
 {
     use OccupancyInfoTrait;
 

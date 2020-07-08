@@ -31,7 +31,7 @@ namespace Bahiazul\GoogleHotelAds\Xml\Element;
  * @license MIT
  * @copyright Copyright (C) Centronor Siglo XXI (https://bahiazul.com/)
  */
-class Hint extends Base
+class Hint
 {
     /**
      * A container for the hotel/itinerary to be updated.

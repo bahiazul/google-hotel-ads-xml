@@ -29,7 +29,7 @@ namespace Bahiazul\GoogleHotelAds\Xml\Element;
  * @license MIT
  * @copyright Copyright (C) Centronor Siglo XXI (https://bahiazul.com/)
  */
-class Query extends Base
+class Query
 {
     /**
      * When provided and set to true, it indicates that the query is a live

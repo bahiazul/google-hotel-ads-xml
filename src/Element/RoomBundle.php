@@ -9,7 +9,7 @@ namespace Bahiazul\GoogleHotelAds\Xml\Element;
  * @license MIT
  * @copyright Copyright (C) Centronor Siglo XXI (https://bahiazul.com/)
  */
-class RoomBundle extends Base
+class RoomBundle
 {
     use CustomInfoTrait;
     use OccupancyInfoTrait;
