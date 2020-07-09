@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Bahiazul\Xml\GoogleHotelAds\Element;
 
 /**
@@ -9,7 +11,7 @@ namespace Bahiazul\Xml\GoogleHotelAds\Element;
  * @license MIT
  * @copyright Copyright (C) Centronor Siglo XXI (https://bahiazul.com/)
  */
-class Transaction
+class Transaction implements \Sabre\Xml\XmlSerializable
 {
     /**
      * A unique identifier for each Transaction message.
@@ -61,4 +63,26 @@ class Transaction
      * @var Result[]
      */
     public $Result;
+
+    public function xmlSerialize(\Sabre\Xml\Writer $writer)
+    {
+        $ns = '{}';
+
+        if (!is_null($this->id)) {
+            $writer->writeAttribute('id', $this->id);
+        }
+
+        if (!is_null($this->timestamp)) {
+            $writer->writeAttribute('timestamp', $this->timestamp);
+        }
+
+        if (!is_null($this->partner)) {
+            $writer->writeAttribute('partner', $this->partner);
+        }
+
+        $writer->write([
+            $ns . 'PropertyDataSet' => $this->PropertyDataSet,
+            $ns . 'Result' => $this->Result,
+        ]);
+    }
 }

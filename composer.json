@@ -3,11 +3,12 @@
     "description": "Set of PHP classes intended to be mapped when reading and writing Google Hotel Ads XML requests and responses using Sabre's XML suite.",
     "type": "library",
     "require": {
-        "php": "^7.1"
+        "php": "^7.1",
+        "sabre/xml": "^2.2"
     },
     "autoload": {
         "psr-4": {
-            "Bahiazul\\Xml\\GoogleHotelAds\\Element\\": "src/Element"
+            "Bahiazul\\Xml\\GoogleHotelAds\\": "src"
         }
     },
     "license": "MIT",
