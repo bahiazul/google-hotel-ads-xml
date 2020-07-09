@@ -57,6 +57,21 @@ class Service extends \Sabre\Xml\Service
             $ns . 'StaysIncludingRange',
             Element\StaysIncludingRange::class
         );
+        $this->mapValueObject(
+            $ns . 'ProgramName',
+            Element\LocalisedText::class
+        );
+        $this->mapValueObject(
+            $ns . 'ProgramLevel',
+            Element\LocalisedText::class
+        );
+        $this->mapValueObject($ns . 'Provider', Element\LocalisedText::class);
+        $this->mapValueObject($ns . 'Name', Element\LocalisedText::class);
+        $this->mapValueObject(
+            $ns . 'Description',
+            Element\LocalisedText::class
+        );
+        $this->mapValueObject($ns . 'Caption', Element\LocalisedText::class);
 
         // The following elements need custom (de-)serializers
 
