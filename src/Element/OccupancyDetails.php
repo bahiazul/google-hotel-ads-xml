@@ -23,5 +23,5 @@ class OccupancyDetails
      *
      * @var Child[]
      */
-    public $Children = [];
+    public $Children;
 }

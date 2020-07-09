@@ -43,7 +43,7 @@ class RoomData
      *     <Text text="Le chambre double" language="fr"/>
      *   </Name>
      *
-     * @var Name
+     * @var Text[]
      */
     public $Name;
 
@@ -70,7 +70,7 @@ class RoomData
      *     <Text text="Deux lits de la reine" language="fr"/>
      *   </Description>
      *
-     * @var Description
+     * @var Text[]
      */
     public $Description;
 

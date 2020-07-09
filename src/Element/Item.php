@@ -24,7 +24,7 @@ class Item
      *
      * @var string[]
      */
-    public $Property = [];
+    public $Property;
 
     /**
      * A container for the <CheckinDate> and <LengthOfStay> elements in an exact

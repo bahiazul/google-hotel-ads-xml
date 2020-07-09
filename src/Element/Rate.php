@@ -92,7 +92,7 @@ class Rate
      *
      * @var PointOfSale[]
      */
-    public $AllowablePointsOfSale = [];
+    public $AllowablePointsOfSale;
 
     use OccupancyInfoTrait;
 
