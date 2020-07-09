@@ -76,7 +76,7 @@ class Rate implements \Sabre\Xml\XmlSerializable
      * The date and time at which the rate is considered expired. This element
      * uses the same syntax as an <ExpirationTime> in a <Result>.
      *
-     * @var DateTime
+     * @var string
      */
     public $ExpirationTime;
 
@@ -106,7 +106,7 @@ class Rate implements \Sabre\Xml\XmlSerializable
         MonetaryValue $Tax = null,
         MonetaryValue $OtherFees = null,
         Refundable $Refundable = null,
-        DateTime $ExpirationTime = null,
+        string $ExpirationTime = null,
         string $ChargeCurrency = null,
         AllowablePointsOfSale $AllowablePointsOfSale = null,
         int $Occupancy = null,

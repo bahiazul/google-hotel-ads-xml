@@ -32,7 +32,7 @@ class Transaction implements \Sabre\Xml\XmlSerializable
      * of 2019-05-03 14:10:00 will still be processed in order, and the price
      * from the message with the timestamp of 2019-05-03 14:10:00 will be used.
      *
-     * @var DateTime
+     * @var string
      */
     public $timestamp;
 
@@ -56,7 +56,7 @@ class Transaction implements \Sabre\Xml\XmlSerializable
 
     public function __construct(
         string $id = null,
-        DateTime $timestamp = null,
+        string $timestamp = null,
         string $partner = null,
         PropertyDataSet $PropertyDataSet = null
     ) {

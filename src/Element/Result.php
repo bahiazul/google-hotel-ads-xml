@@ -108,7 +108,7 @@ class Result implements \Sabre\Xml\XmlSerializable
      * Google will not serve any prices that are expired, and any itinerary that
      * has an expired price will become eligible for Live Querying.
      *
-     * @var DateTime
+     * @var string
      */
     public $ExpirationTime;
 
@@ -194,7 +194,7 @@ class Result implements \Sabre\Xml\XmlSerializable
         MonetaryValue $OtherFees = null,
         Refundable $Refundable = null,
         string $RoomID = null,
-        DateTime $ExpirationTime = null,
+        string $ExpirationTime = null,
         string $ChargeCurrency = null,
         int $Occupancy = null,
         OccupancyDetails $OccupancyDetails = null,

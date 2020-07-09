@@ -30,7 +30,7 @@ class HintRequest implements \Sabre\Xml\XmlDeserializable
     public $id;
 
     /**
-     * @var DateTime
+     * @var string
      */
     public $timestamp;
 
@@ -44,7 +44,7 @@ class HintRequest implements \Sabre\Xml\XmlDeserializable
      *
      * For more information, consult Hint Response Messages.
      *
-     * @var DateTime
+     * @var string
      */
     public $LastFetchTime;
 
