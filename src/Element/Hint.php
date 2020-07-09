@@ -1,6 +1,6 @@
 <?php
 
-namespace Bahiazul\GoogleHotelAds\Xml\Element;
+namespace Bahiazul\Xml\GoogleHotelAds\Element;
 
 /**
  * The root element of a Hint Response message. Hint Response messages specify

@@ -1,6 +1,6 @@
 <?php
 
-namespace Bahiazul\GoogleHotelAds\Xml\Element;
+namespace Bahiazul\Xml\GoogleHotelAds\Element;
 
 /**
  * The <Context> element describes information for a Live Query, including the
