@@ -11,7 +11,7 @@ namespace Bahiazul\Xml\GoogleHotelAds\Element;
  * @license MIT
  * @copyright Copyright (C) Centronor Siglo XXI (https://bahiazul.com/)
  */
-class Transaction implements \Sabre\Xml\XmlSerializable
+class Transaction extends Element
 {
     /**
      * A unique identifier for each Transaction message.

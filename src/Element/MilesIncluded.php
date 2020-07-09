@@ -11,7 +11,7 @@ namespace Bahiazul\Xml\GoogleHotelAds\Element;
  * @license MIT
  * @copyright Copyright (C) Centronor Siglo XXI (https://bahiazul.com/)
  */
-class MilesIncluded extends Base
+class MilesIncluded extends Element
 {
     /**
      * Number of miles per itinerary

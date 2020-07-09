@@ -22,7 +22,7 @@ namespace Bahiazul\Xml\GoogleHotelAds\Element;
  * @license MIT
  * @copyright Copyright (C) Centronor Siglo XXI (https://bahiazul.com/)
  */
-class HintRequest extends Base
+class HintRequest extends Element
 {
     /**
      * @var string
