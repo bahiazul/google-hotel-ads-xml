@@ -119,7 +119,7 @@ class Query
      * Bundle metadata in a metadata Query message. This element can contain one
      * or more <Property> elements that specify hotel property IDs.
      *
-     * @var string
+     * @var Property[]
      */
-    public $HotelInfoProperties;
+    public $HotelInfoProperties = [];
 }
