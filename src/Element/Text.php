@@ -16,10 +16,16 @@ class Text
     /**
      * @var string
      */
-    public $language;
+    public $text;
 
     /**
      * @var string
      */
-    public $text;
+    public $language;
+
+    public function __construct(string $text = null, string $language = null)
+    {
+        $this->language = $language;
+        $this->text = $text;
+    }
 }

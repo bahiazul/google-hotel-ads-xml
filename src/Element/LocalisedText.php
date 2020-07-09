@@ -17,4 +17,9 @@ class LocalisedText
      * @var Text[]
      */
     public $Text = [];
+
+    public function __construct(array $Text = [])
+    {
+        $this->Text = $Text;
+    }
 }
