@@ -11,7 +11,7 @@ namespace Bahiazul\Xml\GoogleHotelAds\Element;
  * @license MIT
  * @copyright Copyright (C) Centronor Siglo XXI (https://bahiazul.com/)
  */
-class PackageData implements \Sabre\Xml\XmlSerializable
+class PackageData extends Base
 {
     /**
      * The unique ID for the package. Use this ID to match the Room Bundle data
@@ -222,24 +222,5 @@ class PackageData implements \Sabre\Xml\XmlSerializable
         $this->CarRentalIncluded = $CarRentalIncluded;
         $this->MilesIncluded = $MilesIncluded;
         $this->OnPropertyCredit = $OnPropertyCredit;
-    }
-
-    /**
-     * @inheritDoc
-     *
-     * @param \Sabre\Xml\Writer $writer
-     * @return void
-     */
-    public function xmlSerialize(\Sabre\Xml\Writer $writer)
-    {
-        $ns = '{}';
-
-        foreach (get_object_vars($this) as $key => $value) {
-            if (!is_null($value)) {
-                $writer->write([
-                    $ns . $key => $value,
-                ]);
-            }
-        }
     }
 }

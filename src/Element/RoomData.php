@@ -11,7 +11,7 @@ namespace Bahiazul\Xml\GoogleHotelAds\Element;
  * @license MIT
  * @copyright Copyright (C) Centronor Siglo XXI (https://bahiazul.com/)
  */
-class RoomData implements \Sabre\Xml\XmlSerializable
+class RoomData extends Base
 {
     /**
      * The unique ID for the room. Use this ID to match the room data with the
@@ -45,7 +45,7 @@ class RoomData implements \Sabre\Xml\XmlSerializable
      *     <Text text="Le chambre double" language="fr"/>
      *   </Name>
      *
-     * @var Text[]
+     * @var LocalisedText
      */
     public $Name;
 
@@ -72,7 +72,7 @@ class RoomData implements \Sabre\Xml\XmlSerializable
      *     <Text text="Deux lits de la reine" language="fr"/>
      *   </Description>
      *
-     * @var Text[]
+     * @var LocalisedText
      */
     public $Description;
 
@@ -136,24 +136,5 @@ class RoomData implements \Sabre\Xml\XmlSerializable
         $this->Occupancy = $Occupancy;
         $this->OccupancyDetails = $OccupancyDetails;
         $this->PhotoURL = $PhotoURL;
-    }
-
-    /**
-     * @inheritDoc
-     *
-     * @param \Sabre\Xml\Writer $writer
-     * @return void
-     */
-    public function xmlSerialize(\Sabre\Xml\Writer $writer)
-    {
-        $ns = '{}';
-
-        foreach (get_object_vars($this) as $key => $value) {
-            if (!is_null($value)) {
-                $writer->write([
-                    $ns . $key => $value,
-                ]);
-            }
-        }
     }
 }

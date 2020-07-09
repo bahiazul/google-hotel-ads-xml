@@ -11,7 +11,7 @@ namespace Bahiazul\Xml\GoogleHotelAds\Element;
  * @license MIT
  * @copyright Copyright (C) Centronor Siglo XXI (https://bahiazul.com/)
  */
-class PropertyDataSet implements \Sabre\Xml\XmlSerializable
+class PropertyDataSet extends Base
 {
     /**
      * The ID of a hotel that the associated data applies to. The value of this
@@ -51,24 +51,5 @@ class PropertyDataSet implements \Sabre\Xml\XmlSerializable
         $this->Property = $Property;
         $this->RoomData = $RoomData;
         $this->PackageData = $PackageData;
-    }
-
-    /**
-     * @inheritDoc
-     *
-     * @param \Sabre\Xml\Writer $writer
-     * @return void
-     */
-    public function xmlSerialize(\Sabre\Xml\Writer $writer)
-    {
-        $ns = '{}';
-
-        foreach (get_object_vars($this) as $key => $value) {
-            if (!is_null($value)) {
-                $writer->write([
-                    $ns . $key => $value,
-                ]);
-            }
-        }
     }
 }

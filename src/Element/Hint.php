@@ -33,7 +33,7 @@ namespace Bahiazul\Xml\GoogleHotelAds\Element;
  * @license MIT
  * @copyright Copyright (C) Centronor Siglo XXI (https://bahiazul.com/)
  */
-class Hint implements \Sabre\Xml\XmlSerializable
+class Hint extends Base
 {
     /**
      * A container for the hotel/itinerary to be updated.
@@ -45,24 +45,5 @@ class Hint implements \Sabre\Xml\XmlSerializable
     public function __construct(array $Item = null)
     {
         $this->Item = $Item;
-    }
-
-    /**
-     * @inheritDoc
-     *
-     * @param \Sabre\Xml\Writer $writer
-     * @return void
-     */
-    public function xmlSerialize(\Sabre\Xml\Writer $writer)
-    {
-        $ns = '{}';
-
-        foreach (get_object_vars($this) as $key => $value) {
-            if (!is_null($value)) {
-                $writer->write([
-                    $ns . $key => $value,
-                ]);
-            }
-        }
     }
 }

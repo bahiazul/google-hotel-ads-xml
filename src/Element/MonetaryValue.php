@@ -11,7 +11,7 @@ namespace Bahiazul\Xml\GoogleHotelAds\Element;
  * @license MIT
  * @copyright Copyright (C) Centronor Siglo XXI (https://bahiazul.com/)
  */
-abstract class MonetaryValue implements \Sabre\Xml\XmlSerializable
+abstract class MonetaryValue extends Base
 {
     /**
      * A Boolean that indicates if this rate includes taxes and fees.
@@ -45,24 +45,5 @@ abstract class MonetaryValue implements \Sabre\Xml\XmlSerializable
         $this->currency = $currency;
         $this->value = $value;
         $this->all_inclusive = $all_inclusive;
-    }
-
-    /**
-     * @inheritDoc
-     *
-     * @param \Sabre\Xml\Writer $writer
-     * @return void
-     */
-    public function xmlSerialize(\Sabre\Xml\Writer $writer)
-    {
-        $ns = '{}';
-
-        foreach (get_object_vars($this) as $key => $value) {
-            if (!is_null($value)) {
-                $writer->write([
-                    $ns . $key => $value,
-                ]);
-            }
-        }
     }
 }

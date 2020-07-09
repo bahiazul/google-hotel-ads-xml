@@ -11,7 +11,7 @@ namespace Bahiazul\Xml\GoogleHotelAds\Element;
  * @license MIT
  * @copyright Copyright (C) Centronor Siglo XXI (https://bahiazul.com/)
  */
-class Stay implements \Sabre\Xml\XmlDeserializable
+class Stay extends Base
 {
     /**
      * The check-in date for the itinerary.
@@ -26,20 +26,4 @@ class Stay implements \Sabre\Xml\XmlDeserializable
      * @var int
      */
     public $LengthOfStay;
-
-    public static function xmlDeserialize(Sabre\Xml\Reader $reader)
-    {
-        $ns = '{}';
-        $object = new self();
-
-        $kvs = Sabre\Xml\Element\KeyValue::xmlDeserialize($reader);
-        foreach ($kvs as $key => $value) {
-            $property = str_replace($ns, '', $key, 1);
-            if (isset($value)) {
-                $object->{$property} = $value;
-            }
-        }
-
-        return $object;
-    }
 }

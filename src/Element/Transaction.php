@@ -54,18 +54,6 @@ class Transaction implements \Sabre\Xml\XmlSerializable
      */
     public $PropertyDataSet;
 
-    public function __construct(
-        string $id = null,
-        string $timestamp = null,
-        string $partner = null,
-        PropertyDataSet $PropertyDataSet = null
-    ) {
-        $this->id = $id;
-        $this->timestamp = $timestamp;
-        $this->partner = $partner;
-        $this->PropertyDataSet = $PropertyDataSet;
-    }
-
     /**
      * Pricing data for a room's itinerary or a <RoomBundle> element that
      * defines Room Bundles and additional types of rooms for the property.
@@ -74,30 +62,19 @@ class Transaction implements \Sabre\Xml\XmlSerializable
      *
      * @var Result[]
      */
-    public $Result;
+    public $Result = [];
 
-    /**
-     * @inheritDoc
-     *
-     * @param \Sabre\Xml\Writer $writer
-     * @return void
-     */
-    public function xmlSerialize(\Sabre\Xml\Writer $writer)
-    {
-        $ns = '{}';
-
-        if (!is_null($this->rate_rule_id)) {
-            $writer->writeAttributes([
-                'rate_rule_id' => $this->rate_rule_id,
-            ]);
-        }
-
-        foreach (get_object_vars($this) as $key => $value) {
-            if (!is_null($value)) {
-                $writer->write([
-                    $ns . $key => $value,
-                ]);
-            }
-        }
+    public function __construct(
+        string $id = null,
+        string $timestamp = null,
+        string $partner = null,
+        PropertyDataSet $PropertyDataSet = null,
+        array $Result = null
+    ) {
+        $this->id = $id;
+        $this->timestamp = $timestamp;
+        $this->partner = $partner;
+        $this->PropertyDataSet = $PropertyDataSet;
+        $this->Result = $Result;
     }
 }

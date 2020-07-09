@@ -11,7 +11,7 @@ namespace Bahiazul\Xml\GoogleHotelAds\Element;
  * @license MIT
  * @copyright Copyright (C) Centronor Siglo XXI (https://bahiazul.com/)
  */
-class Text implements \Sabre\Xml\XmlSerializable
+class Text extends Base
 {
     /**
      * @var string
@@ -27,18 +27,5 @@ class Text implements \Sabre\Xml\XmlSerializable
     {
         $this->language = $language;
         $this->text = $text;
-    }
-
-    /**
-     * @inheritDoc
-     *
-     * @param \Sabre\Xml\Writer $writer
-     * @return void
-     */
-    public function xmlSerialize(\Sabre\Xml\Writer $writer)
-    {
-        $ns = '{}';
-
-        $writer->writeAttributes(get_object_vars($this));
     }
 }

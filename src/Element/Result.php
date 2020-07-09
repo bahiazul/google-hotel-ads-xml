@@ -11,7 +11,7 @@ namespace Bahiazul\Xml\GoogleHotelAds\Element;
  * @license MIT
  * @copyright Copyright (C) Centronor Siglo XXI (https://bahiazul.com/)
  */
-class Result implements \Sabre\Xml\XmlSerializable
+class Result extends Base
 {
     /**
      * The ID of a hotel affected by the associated data (price, itinerary,
@@ -166,7 +166,7 @@ class Result implements \Sabre\Xml\XmlSerializable
      *
      * @var RoomBundle[]
      */
-    public $RoomBundle;
+    public $RoomBundle = [];
 
     /**
      * One or more landing pages that are eligible for the hotel. A landing page
@@ -227,24 +227,5 @@ class Result implements \Sabre\Xml\XmlSerializable
         $this->Custom3 = $Custom3;
         $this->Custom4 = $Custom4;
         $this->Custom5 = $Custom5;
-    }
-
-    /**
-     * @inheritDoc
-     *
-     * @param \Sabre\Xml\Writer $writer
-     * @return void
-     */
-    public function xmlSerialize(\Sabre\Xml\Writer $writer)
-    {
-        $ns = '{}';
-
-        foreach (get_object_vars($this) as $key => $value) {
-            if (!is_null($value)) {
-                $writer->write([
-                    $ns . $key => $value,
-                ]);
-            }
-        }
     }
 }
