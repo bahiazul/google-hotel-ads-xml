@@ -11,7 +11,7 @@ namespace Bahiazul\Xml\GoogleHotelAds\Element;
  * @license MIT
  * @copyright Copyright (C) Centronor Siglo XXI (https://bahiazul.com/)
  */
-class Result extends Element
+class Result extends Base
 {
     /**
      * The ID of a hotel affected by the associated data (price, itinerary,

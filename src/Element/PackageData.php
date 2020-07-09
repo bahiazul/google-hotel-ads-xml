@@ -11,7 +11,7 @@ namespace Bahiazul\Xml\GoogleHotelAds\Element;
  * @license MIT
  * @copyright Copyright (C) Centronor Siglo XXI (https://bahiazul.com/)
  */
-class PackageData extends Element
+class PackageData extends Base
 {
     /**
      * The unique ID for the package. Use this ID to match the Room Bundle data

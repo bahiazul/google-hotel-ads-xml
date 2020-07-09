@@ -11,7 +11,7 @@ namespace Bahiazul\Xml\GoogleHotelAds\Element;
  * @license MIT
  * @copyright Copyright (C) Centronor Siglo XXI (https://bahiazul.com/)
  */
-class OnPropertyCredit extends Element
+class OnPropertyCredit extends Base
 {
     /**
      * The value of the credit per itinerary, in local currency.

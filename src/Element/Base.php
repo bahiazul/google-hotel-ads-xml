@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Bahiazul\Xml\GoogleHotelAds;
+namespace Bahiazul\Xml\GoogleHotelAds\Element;
 
 /**
  * Base
@@ -11,7 +11,7 @@ namespace Bahiazul\Xml\GoogleHotelAds;
  * @license MIT
  * @copyright Copyright (C) Centronor Siglo XXI (https://bahiazul.com/)
  */
-abstract class Element implements \Sabre\Xml\Element
+abstract class Base implements \Sabre\Xml\Element
 {
     private function getAttributes()
     {

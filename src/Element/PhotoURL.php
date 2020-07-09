@@ -11,7 +11,7 @@ namespace Bahiazul\Xml\GoogleHotelAds\Element;
  * @license MIT
  * @copyright Copyright (C) Centronor Siglo XXI (https://bahiazul.com/)
  */
-class PhotoURL extends Element
+class PhotoURL extends Base
 {
     /**
      * Defines the caption for the photo. This element takes a single child

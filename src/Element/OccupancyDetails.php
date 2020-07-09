@@ -11,7 +11,7 @@ namespace Bahiazul\Xml\GoogleHotelAds\Element;
  * @license MIT
  * @copyright Copyright (C) Centronor Siglo XXI (https://bahiazul.com/)
  */
-class OccupancyDetails extends Element
+class OccupancyDetails extends Base
 {
     /**
      * The number of adult guests. Min:1, Max:20.

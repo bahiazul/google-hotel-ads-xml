@@ -11,7 +11,7 @@ namespace Bahiazul\Xml\GoogleHotelAds\Element;
  * @license MIT
  * @copyright Copyright (C) Centronor Siglo XXI (https://bahiazul.com/)
  */
-class Item extends Element
+class Item extends Base
 {
     /**
      * The ID of a hotel, using the same ID as the Hotel List Feed. The number

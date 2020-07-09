@@ -11,7 +11,7 @@ namespace Bahiazul\Xml\GoogleHotelAds\Element;
  * @license MIT
  * @copyright Copyright (C) Centronor Siglo XXI (https://bahiazul.com/)
  */
-abstract class MonetaryValue extends Element
+abstract class MonetaryValue extends Base
 {
     /**
      * A Boolean that indicates if this rate includes taxes and fees.
