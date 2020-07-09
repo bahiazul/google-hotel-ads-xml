@@ -62,7 +62,7 @@ abstract class Base implements \Sabre\Xml\Element
      * @param Sabre\Xml\Reader $reader
      * @return void
      */
-    public static function xmlDeserialize(Sabre\Xml\Reader $reader)
+    public static function xmlDeserialize(\Sabre\Xml\Reader $reader)
     {
         $ns = '{}';
         $object = new self();
