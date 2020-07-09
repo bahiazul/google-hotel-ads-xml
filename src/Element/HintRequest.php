@@ -22,7 +22,7 @@ namespace Bahiazul\Xml\GoogleHotelAds\Element;
  * @license MIT
  * @copyright Copyright (C) Centronor Siglo XXI (https://bahiazul.com/)
  */
-class HintRequest
+class HintRequest implements \Sabre\Xml\XmlDeserializable
 {
     /**
      * @var string
@@ -47,4 +47,26 @@ class HintRequest
      * @var DateTime
      */
     public $LastFetchTime;
+
+    public static function xmlDeserialize(Sabre\Xml\Reader $reader)
+    {
+        $ns = '{}';
+        $object = new self();
+
+        foreach ($reader->parseAttributes() as $key => $value) {
+            if (property_exists($object, $key)) {
+                $object->{$key} = $value;
+            }
+        }
+
+        $kvs = Sabre\Xml\Element\KeyValue::xmlDeserialize($reader);
+        foreach ($kvs as $key => $value) {
+            $property = str_replace($ns, '', $key, 1);
+            if (isset($value)) {
+                $object->{$property} = $value;
+            }
+        }
+
+        return $object;
+    }
 }

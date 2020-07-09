@@ -11,7 +11,7 @@ namespace Bahiazul\Xml\GoogleHotelAds\Element;
  * @license MIT
  * @copyright Copyright (C) Centronor Siglo XXI (https://bahiazul.com/)
  */
-class Rate
+class Rate implements \Sabre\Xml\XmlSerializable
 {
     /**
      * For conditional rates, this ID matches a rate to a definition in your
@@ -99,4 +99,67 @@ class Rate
     use OccupancyInfoTrait;
 
     use CustomInfoTrait;
+
+    public function __construct(
+        string $rate_rule_id = null,
+        MonetaryValue $Baserate = null,
+        MonetaryValue $Tax = null,
+        MonetaryValue $OtherFees = null,
+        Refundable $Refundable = null,
+        DateTime $ExpirationTime = null,
+        string $ChargeCurrency = null,
+        AllowablePointsOfSale $AllowablePointsOfSale = null,
+        int $Occupancy = null,
+        OccupancyDetails $OccupancyDetails = null,
+        Custom1 $Custom1 = null,
+        Custom2 $Custom2 = null,
+        Custom3 $Custom3 = null,
+        Custom4 $Custom4 = null,
+        Custom5 $Custom5 = null
+    ) {
+        $this->rate_rule_id = $rate_rule_id;
+
+        $this->Baserate = $Baserate;
+        $this->Tax = $Tax;
+        $this->OtherFees = $OtherFees;
+
+        $this->Refundable = $Refundable;
+        $this->ExpirationTime = $ExpirationTime;
+        $this->ChargeCurrency = $ChargeCurrency;
+        $this->AllowablePointsOfSale = $AllowablePointsOfSale;
+
+        $this->Occupancy = $Occupancy;
+        $this->OccupancyDetails = $OccupancyDetails;
+
+        $this->Custom1 = $Custom1;
+        $this->Custom2 = $Custom2;
+        $this->Custom3 = $Custom3;
+        $this->Custom4 = $Custom4;
+        $this->Custom5 = $Custom5;
+    }
+
+    /**
+     * @inheritDoc
+     *
+     * @param \Sabre\Xml\Writer $writer
+     * @return void
+     */
+    public function xmlSerialize(\Sabre\Xml\Writer $writer)
+    {
+        $ns = '{}';
+
+        if (!is_null($this->rate_rule_id)) {
+            $writer->writeAttributes([
+                'rate_rule_id' => $this->rate_rule_id,
+            ]);
+        }
+
+        foreach (get_object_vars($this) as $key => $value) {
+            if (!is_null($value)) {
+                $writer->write([
+                    $ns . $key => $value,
+                ]);
+            }
+        }
+    }
 }

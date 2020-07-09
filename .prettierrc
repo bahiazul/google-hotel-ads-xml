@@ -3,7 +3,7 @@
     {
       "files": "*.php",
       "options": {
-        "printWidth": 80,
+        "printWidth": 120,
         "trailingCommaPHP": true,
         "singleQuote": true
       }

@@ -11,7 +11,7 @@ namespace Bahiazul\Xml\GoogleHotelAds\Element;
  * @license MIT
  * @copyright Copyright (C) Centronor Siglo XXI (https://bahiazul.com/)
  */
-class Result
+class Result implements \Sabre\Xml\XmlSerializable
 {
     /**
      * The ID of a hotel affected by the associated data (price, itinerary,
@@ -149,7 +149,7 @@ class Result
      * room/itinerary combination. For example, you define multiple rates for
      * conditional rates, private rates, or conditional rates in Room Bundles).
      *
-     * @var Rate[]
+     * @var Rates
      */
     public $Rates = [];
 
@@ -164,7 +164,7 @@ class Result
      * metadata so that you can reference it, rather than repeat it, in all
      * future pricing updates.
      *
-     * @var RoomBundle
+     * @var RoomBundle[]
      */
     public $RoomBundle;
 
@@ -184,4 +184,67 @@ class Result
     public $AllowablePointsOfSale = [];
 
     use CustomInfoTrait;
+
+    public function __construct(
+        string $Property = null,
+        string $Checkin = null,
+        int $Nights = null,
+        MonetaryValue $Baserate = null,
+        MonetaryValue $Tax = null,
+        MonetaryValue $OtherFees = null,
+        Refundable $Refundable = null,
+        string $RoomID = null,
+        DateTime $ExpirationTime = null,
+        string $ChargeCurrency = null,
+        int $Occupancy = null,
+        OccupancyDetails $OccupancyDetails = null,
+        Rates $Rates = null,
+        array $RoomBundle = null,
+        AllowablePointsOfSale $AllowablePointsOfSale = null,
+        Custom1 $Custom1 = null,
+        Custom2 $Custom2 = null,
+        Custom3 $Custom3 = null,
+        Custom4 $Custom4 = null,
+        Custom5 $Custom5 = null
+    ) {
+        $this->Property = $Property;
+        $this->Checkin = $Checkin;
+        $this->Nights = $Nights;
+        $this->Baserate = $Baserate;
+        $this->Tax = $Tax;
+        $this->OtherFees = $OtherFees;
+        $this->Refundable = $Refundable;
+        $this->RoomID = $RoomID;
+        $this->ExpirationTime = $ExpirationTime;
+        $this->ChargeCurrency = $ChargeCurrency;
+        $this->Occupancy = $Occupancy;
+        $this->OccupancyDetails = $OccupancyDetails;
+        $this->Rates = $Rates;
+        $this->RoomBundle = $RoomBundle;
+        $this->AllowablePointsOfSale = $AllowablePointsOfSale;
+        $this->Custom1 = $Custom1;
+        $this->Custom2 = $Custom2;
+        $this->Custom3 = $Custom3;
+        $this->Custom4 = $Custom4;
+        $this->Custom5 = $Custom5;
+    }
+
+    /**
+     * @inheritDoc
+     *
+     * @param \Sabre\Xml\Writer $writer
+     * @return void
+     */
+    public function xmlSerialize(\Sabre\Xml\Writer $writer)
+    {
+        $ns = '{}';
+
+        foreach (get_object_vars($this) as $key => $value) {
+            if (!is_null($value)) {
+                $writer->write([
+                    $ns . $key => $value,
+                ]);
+            }
+        }
+    }
 }

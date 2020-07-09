@@ -11,7 +11,7 @@ namespace Bahiazul\Xml\GoogleHotelAds\Element;
  * @license MIT
  * @copyright Copyright (C) Centronor Siglo XXI (https://bahiazul.com/)
  */
-class MilesIncluded
+class MilesIncluded implements \Sabre\Xml\XmlSerializable
 {
     /**
      * Number of miles per itinerary
@@ -23,7 +23,32 @@ class MilesIncluded
     /**
      * Frequent flyer miles provide
      *
-     * @var Text
+     * @var LocalisedText
      */
-    public $Provider = [];
+    public $Provider;
+
+    public function __construct(int $NumberofMiles = null, LocalisedText $Provider = null)
+    {
+        $this->NumberofMiles = $NumberofMiles;
+        $this->Provider = $Provider;
+    }
+
+    /**
+     * @inheritDoc
+     *
+     * @param \Sabre\Xml\Writer $writer
+     * @return void
+     */
+    public function xmlSerialize(\Sabre\Xml\Writer $writer)
+    {
+        $ns = '{}';
+
+        foreach (get_object_vars($this) as $key => $value) {
+            if (!is_null($value)) {
+                $writer->write([
+                    $ns . $key => $value,
+                ]);
+            }
+        }
+    }
 }

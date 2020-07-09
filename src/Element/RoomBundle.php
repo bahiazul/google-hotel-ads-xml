@@ -11,7 +11,7 @@ namespace Bahiazul\Xml\GoogleHotelAds\Element;
  * @license MIT
  * @copyright Copyright (C) Centronor Siglo XXI (https://bahiazul.com/)
  */
-class RoomBundle
+class RoomBundle implements \Sabre\Xml\XmlSerializable
 {
     /**
      * The unique ID for the room data. Use this ID to match the Room Bundle
@@ -104,9 +104,67 @@ class RoomBundle
      * Rates that override the defaults for this Room Bundle. This element uses
      * the same syntax as <Rates> in <Result>.
      *
-     * @var Rate[]
+     * @var Rates
      */
     public $Rates = [];
 
     use CustomInfoTrait;
+
+    public function __construct(
+        string $RoomID = null,
+        string $PackageID = null,
+        MonetaryValue $Baserate = null,
+        MonetaryValue $Tax = null,
+        MonetaryValue $OtherFees = null,
+        Refundable $Refundable = null,
+        int $Occupancy = null,
+        OccupancyDetails $OccupancyDetails = null,
+        string $RatePlanID = null,
+        Rates $Rates = null,
+        Custom1 $Custom1 = null,
+        Custom2 $Custom2 = null,
+        Custom3 $Custom3 = null,
+        Custom4 $Custom4 = null,
+        Custom5 $Custom5 = null
+    ) {
+        $this->RoomID = $RoomID;
+        $this->PackageID = $PackageID;
+
+        $this->Baserate = $Baserate;
+        $this->Tax = $Tax;
+        $this->OtherFees = $OtherFees;
+
+        $this->Refundable = $Refundable;
+
+        $this->Occupancy = $Occupancy;
+        $this->OccupancyDetails = $OccupancyDetails;
+
+        $this->RatePlanID = $RatePlanID;
+        $this->Rates = $Rates;
+
+        $this->Custom1 = $Custom1;
+        $this->Custom2 = $Custom2;
+        $this->Custom3 = $Custom3;
+        $this->Custom4 = $Custom4;
+        $this->Custom5 = $Custom5;
+    }
+
+    /**
+     * @inheritDoc
+     *
+     * @param \Sabre\Xml\Writer $writer
+     * @return void
+     */
+    public function xmlSerialize(\Sabre\Xml\Writer $writer)
+    {
+        $ns = '{}';
+
+        foreach (get_object_vars($this) as $key => $value) {
+            if (!is_null($value)) {
+                $writer->write([
+                    $ns . $key => $value,
+                ]);
+            }
+        }
+    }
 }

@@ -18,7 +18,7 @@ namespace Bahiazul\Xml\GoogleHotelAds\Element;
  * @license MIT
  * @copyright Copyright (C) Centronor Siglo XXI (https://bahiazul.com/)
  */
-class Context
+class Context implements \Sabre\Xml\Element
 {
     use OccupancyInfoTrait;
 
@@ -48,4 +48,57 @@ class Context
      * @var string
      */
     public $UserDevice;
+
+    public function __construct(
+        int $Occupancy = null,
+        OccupancyDetails $OccupancyDetails = null,
+        string $UserCountry = null,
+        string $UserDevice = null
+    ) {
+        $this->Occupancy = $Occupancy;
+        $this->OccupancyDetails = $OccupancyDetails;
+        $this->UserCountry = $UserCountry;
+        $this->UserDevice = $UserDevice;
+    }
+
+    /**
+     * @inheritDoc
+     *
+     * @param \Sabre\Xml\Writer $writer
+     * @return void
+     */
+    public function xmlSerialize(\Sabre\Xml\Writer $writer)
+    {
+        $ns = '{}';
+
+        foreach (get_object_vars($this) as $key => $value) {
+            if (!is_null($value)) {
+                $writer->write([
+                    $ns . $key => $value,
+                ]);
+            }
+        }
+    }
+
+    /**
+     * @inheritDoc
+     *
+     * @param Sabre\Xml\Reader $reader
+     * @return void
+     */
+    public static function xmlDeserialize(Sabre\Xml\Reader $reader)
+    {
+        $ns = '{}';
+        $object = new self();
+
+        $kvs = Sabre\Xml\Element\KeyValue::xmlDeserialize($reader);
+        foreach ($kvs as $key => $value) {
+            $property = str_replace($ns, '', $key, 1);
+            if (isset($value)) {
+                $object->{$property} = $value;
+            }
+        }
+
+        return $object;
+    }
 }

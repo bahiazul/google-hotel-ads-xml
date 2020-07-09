@@ -11,7 +11,7 @@ namespace Bahiazul\Xml\GoogleHotelAds\Element;
  * @license MIT
  * @copyright Copyright (C) Centronor Siglo XXI (https://bahiazul.com/)
  */
-class Item
+class Item implements \Sabre\Xml\XmlSerializable
 {
     /**
      * The ID of a hotel, using the same ID as the Hotel List Feed. The number
@@ -26,7 +26,7 @@ class Item
      *
      * @var string[]
      */
-    public $Property;
+    public $Property = [];
 
     /**
      * A container for the <CheckinDate> and <LengthOfStay> elements in an exact
@@ -46,4 +46,37 @@ class Item
     public $StaysIncludingRange;
 
     use DateRangeTrait;
+
+    public function __construct(
+        array $Property = [],
+        Stay $Stay = null,
+        StaysIncludingRange $StaysIncludingRange = null,
+        string $FirstDate = null,
+        string $LastDate = null
+    ) {
+        $this->Property = $Property;
+        $this->Stay = $Stay;
+        $this->StaysIncludingRange = $StaysIncludingRange;
+        $this->FirstDate = $FirstDate;
+        $this->LastDate = $LastDate;
+    }
+
+    /**
+     * @inheritDoc
+     *
+     * @param \Sabre\Xml\Writer $writer
+     * @return void
+     */
+    public function xmlSerialize(\Sabre\Xml\Writer $writer)
+    {
+        $ns = '{}';
+
+        foreach (get_object_vars($this) as $key => $value) {
+            if (!is_null($value)) {
+                $writer->write([
+                    $ns . $key => $value,
+                ]);
+            }
+        }
+    }
 }

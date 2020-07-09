@@ -11,7 +11,7 @@ namespace Bahiazul\Xml\GoogleHotelAds\Element;
  * @license MIT
  * @copyright Copyright (C) Centronor Siglo XXI (https://bahiazul.com/)
  */
-class OnPropertyCredit
+class OnPropertyCredit implements \Sabre\Xml\XmlSerializable
 {
     /**
      * The value of the credit per itinerary, in local currency.
@@ -19,4 +19,28 @@ class OnPropertyCredit
      * @var MonetaryValue
      */
     public $Amount;
+
+    public function __construct(MonetaryValue $Amount = null)
+    {
+        $this->Amount = $Amount;
+    }
+
+    /**
+     * @inheritDoc
+     *
+     * @param \Sabre\Xml\Writer $writer
+     * @return void
+     */
+    public function xmlSerialize(\Sabre\Xml\Writer $writer)
+    {
+        $ns = '{}';
+
+        foreach (get_object_vars($this) as $key => $value) {
+            if (!is_null($value)) {
+                $writer->write([
+                    $ns . $key => $value,
+                ]);
+            }
+        }
+    }
 }

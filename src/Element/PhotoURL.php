@@ -11,7 +11,7 @@ namespace Bahiazul\Xml\GoogleHotelAds\Element;
  * @license MIT
  * @copyright Copyright (C) Centronor Siglo XXI (https://bahiazul.com/)
  */
-class PhotoURL
+class PhotoURL implements \Sabre\Xml\XmlSerializable
 {
     /**
      * Defines the caption for the photo. This element takes a single child
@@ -19,7 +19,7 @@ class PhotoURL
      * The text attribute is the caption, and the language attribute specifies
      * a two-letter language code such as "en".
      *
-     * @var Text[]
+     * @var LocalisedText
      */
     public $Caption = [];
 
@@ -30,4 +30,29 @@ class PhotoURL
      * @var string
      */
     public $URL;
+
+    public function __construct(LocalisedText $Caption = null, string $URL = null)
+    {
+        $this->Caption = $Caption;
+        $this->URL = $URL;
+    }
+
+    /**
+     * @inheritDoc
+     *
+     * @param \Sabre\Xml\Writer $writer
+     * @return void
+     */
+    public function xmlSerialize(\Sabre\Xml\Writer $writer)
+    {
+        $ns = '{}';
+
+        foreach (get_object_vars($this) as $key => $value) {
+            if (!is_null($value)) {
+                $writer->write([
+                    $ns . $key => $value,
+                ]);
+            }
+        }
+    }
 }

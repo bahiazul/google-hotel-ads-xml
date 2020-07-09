@@ -11,21 +11,21 @@ namespace Bahiazul\Xml\GoogleHotelAds\Element;
  * @license MIT
  * @copyright Copyright (C) Centronor Siglo XXI (https://bahiazul.com/)
  */
-class MembershipBenefitsIncluded
+class MembershipBenefitsIncluded implements \Sabre\Xml\XmlSerializable
 {
     /**
      * Name of the elite status program
      *
-     * @var Text[]
+     * @var LocalisedText
      */
-    public $ProgramName = [];
+    public $ProgramName;
 
     /**
      * Level of the program, e.g., “Gold.”
      *
-     * @var Text[]
+     * @var LocalisedText
      */
-    public $ProgramLevel = [];
+    public $ProgramLevel;
 
     /**
      * (optional) Nightly value of the benefits.
@@ -33,4 +33,33 @@ class MembershipBenefitsIncluded
      * @var MonetaryValue
      */
     public $NightlyValue;
+
+    public function __construct(
+        LocalisedText $ProgramName = null,
+        LocalisedText $ProgramLevel = null,
+        MonetaryValue $NightlyValue = null
+    ) {
+        $this->ProgramName = $ProgramName;
+        $this->ProgramLevel = $ProgramLevel;
+        $this->NightlyValue = $NightlyValue;
+    }
+
+    /**
+     * @inheritDoc
+     *
+     * @param \Sabre\Xml\Writer $writer
+     * @return void
+     */
+    public function xmlSerialize(\Sabre\Xml\Writer $writer)
+    {
+        $ns = '{}';
+
+        foreach (get_object_vars($this) as $key => $value) {
+            if (!is_null($value)) {
+                $writer->write([
+                    $ns . $key => $value,
+                ]);
+            }
+        }
+    }
 }

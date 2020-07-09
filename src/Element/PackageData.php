@@ -11,7 +11,7 @@ namespace Bahiazul\Xml\GoogleHotelAds\Element;
  * @license MIT
  * @copyright Copyright (C) Centronor Siglo XXI (https://bahiazul.com/)
  */
-class PackageData
+class PackageData implements \Sabre\Xml\XmlSerializable
 {
     /**
      * The unique ID for the package. Use this ID to match the Room Bundle data
@@ -41,7 +41,7 @@ class PackageData
      *     <Text text="Lit et petit déjeuné" language="fr"/>
      *   </Name>
      *
-     * @var Text[]
+     * @var LocalisedText
      */
     public $Name = [];
 
@@ -61,7 +61,7 @@ class PackageData
      *     <Text text="Deux certificats petit-déjeuner buffet pour chaque nuit de séjour." language="fr"/>
      *   </Description>
      *
-     * @var Text[]
+     * @var LocalisedText
      */
     public $Description = [];
 
@@ -128,7 +128,7 @@ class PackageData
     /**
      * Specifies whether this Room Bundle includes breakfast with the rate.
      *
-     * @var boolean
+     * @var bool
      */
     public $BreakfastIncluded;
 
@@ -139,7 +139,7 @@ class PackageData
      * This element does not apply to in-room wired internet or wireless
      * internet that is not available in guest rooms.
      *
-     * @var boolean
+     * @var bool
      */
     public $InternetIncluded;
 
@@ -191,4 +191,55 @@ class PackageData
      * @var OnPropertyCredit
      */
     public $OnPropertyCredit;
+
+    public function __construct(
+        string $PackageID = null,
+        LocalisedText $Name = null,
+        LocalisedText $Description = null,
+        Refundable $Refundable = null,
+        string $ChargeCurrency = null,
+        int $Occupancy = null,
+        OccupancyDetails $OccupancyDetails = null,
+        bool $BreakfastIncluded = null,
+        bool $InternetIncluded = null,
+        bool $ParkingIncluded = null,
+        MembershipBenefitsIncluded $MembershipBenefitsIncluded = null,
+        bool $CarRentalIncluded = null,
+        MilesIncluded $MilesIncluded = null,
+        OnPropertyCredit $OnPropertyCredit = null
+    ) {
+        $this->PackageID = $PackageID;
+        $this->Name = $Name;
+        $this->Description = $Description;
+        $this->Refundable = $Refundable;
+        $this->ChargeCurrency = $ChargeCurrency;
+        $this->Occupancy = $Occupancy;
+        $this->OccupancyDetails = $OccupancyDetails;
+        $this->BreakfastIncluded = $BreakfastIncluded;
+        $this->InternetIncluded = $InternetIncluded;
+        $this->ParkingIncluded = $ParkingIncluded;
+        $this->MembershipBenefitsIncluded = $MembershipBenefitsIncluded;
+        $this->CarRentalIncluded = $CarRentalIncluded;
+        $this->MilesIncluded = $MilesIncluded;
+        $this->OnPropertyCredit = $OnPropertyCredit;
+    }
+
+    /**
+     * @inheritDoc
+     *
+     * @param \Sabre\Xml\Writer $writer
+     * @return void
+     */
+    public function xmlSerialize(\Sabre\Xml\Writer $writer)
+    {
+        $ns = '{}';
+
+        foreach (get_object_vars($this) as $key => $value) {
+            if (!is_null($value)) {
+                $writer->write([
+                    $ns . $key => $value,
+                ]);
+            }
+        }
+    }
 }

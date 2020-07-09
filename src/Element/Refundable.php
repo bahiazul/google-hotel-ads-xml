@@ -11,7 +11,7 @@ namespace Bahiazul\Xml\GoogleHotelAds\Element;
  * @license MIT
  * @copyright Copyright (C) Centronor Siglo XXI (https://bahiazul.com/)
  */
-class Refundable
+class Refundable implements \Sabre\Xml\XmlSerializable
 {
     /**
      * (Required) Set to 1 or true to indicate if the rate allows a full refund;
@@ -43,4 +43,27 @@ class Refundable
      * @var string
      */
     public $refundable_until_time;
+
+    public function __construct(
+        bool $available = null,
+        int $refundable_until_days = null,
+        string $refundable_until_time = null
+    ) {
+        $this->available = $available;
+        $this->refundable_until_days = $refundable_until_days;
+        $this->refundable_until_time = $refundable_until_time;
+    }
+
+    /**
+     * @inheritDoc
+     *
+     * @param \Sabre\Xml\Writer $writer
+     * @return void
+     */
+    public function xmlSerialize(\Sabre\Xml\Writer $writer)
+    {
+        $ns = '{}';
+
+        $writer->writeAttributes(get_object_vars($this));
+    }
 }
