@@ -1,2 +1,8 @@
+# Package managers
 /vendor/
 /node_modules/
+
+# Tests
+tests/cov/
+tests/.phpunit.result.cache
+.php_cs.cache

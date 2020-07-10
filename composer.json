@@ -1,6 +1,21 @@
 {
     "name": "bahiazul/google-hotel-ads-xml",
     "description": "Set of PHP classes intended to be mapped when reading and writing Google Hotel Ads XML requests and responses using Sabre's XML suite.",
+    "license": "MIT",
+    "keywords": [
+        "google",
+        "ads",
+        "hotel-ads",
+        "xml"
+    ],
+    "authors": [
+        {
+            "name": "Javier Zapata",
+            "email": "javier.zapata@bahiazul.com",
+            "homepage": "http://bahiazul.com/",
+            "role": "Developer"
+        }
+    ],
     "type": "library",
     "require": {
         "php": "^7.1",
@@ -11,11 +26,30 @@
             "Bahiazul\\Xml\\GoogleHotelAds\\": "src"
         }
     },
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Javier Zapata",
-            "email": "javier.zapata@bahiazul.com"
+    "autoload-dev": {
+        "psr-4": {
+            "Bahiazul\\Xml\\GoogleHotelAds\\": "tests/Xml/GoogleHotelAds"
         }
-    ]
+    },
+    "scripts": {
+        "phpstan": [
+            "phpstan analyse src"
+        ],
+        "cs-fixer": [
+            "php-cs-fixer fix"
+        ],
+        "phpunit": [
+            "phpunit"
+        ],
+        "test": [
+            "composer phpstan",
+            "composer cs-fixer",
+            "composer phpunit"
+        ]
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.16",
+        "phpstan/phpstan": "^0.12.32",
+        "phpunit/phpunit": "^9.2"
+    }
 }
