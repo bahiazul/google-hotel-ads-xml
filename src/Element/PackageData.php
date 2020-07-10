@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Bahiazul\Xml\GoogleHotelAds\Element;
 
 /**
- * PackageData
+ * PackageData.
  *
  * @author Javier Zapata <javierzapata82@gmail.com> (https://javi.io/)
  * @license MIT
@@ -157,9 +157,8 @@ class PackageData extends Base
     /**
      * Rate includes elite status benefits for duration of stay. Includes the
      * following parameters:
-     *
      * * ProgramName: Name of the elite status program
-     * * ProgramLevel: Level of the program, e.g., “Gold.”
+     * * ProgramLevel: Level of the program, e.g., “Gold”.
      * * NightlyValue (optional): Nightly value of the benefits.
      *
      * @var MembershipBenefitsIncluded
@@ -175,7 +174,6 @@ class PackageData extends Base
 
     /**
      * Rate includes frequent flyer miles. Parameters include:
-     *
      * * NumberofMiles: Number of miles per itinerary.
      * * Provider: Frequent flyer miles provide.
      *
@@ -185,7 +183,6 @@ class PackageData extends Base
 
     /**
      * Rate includes on-property credit (F&B, resort, spa, etc). Parameter:
-     *
      * * Amount: The value of the credit per itinerary, in local currency.
      *
      * @var OnPropertyCredit

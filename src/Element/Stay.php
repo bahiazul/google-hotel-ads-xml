@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Bahiazul\Xml\GoogleHotelAds\Element;
 
 /**
- * Stay
+ * Stay.
  *
  * @author Javier Zapata <javierzapata82@gmail.com> (https://javi.io/)
  * @license MIT

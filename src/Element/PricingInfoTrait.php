@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Bahiazul\Xml\GoogleHotelAds\Element;
 
 /**
- * PricingInfoTrait
+ * PricingInfoTrait.
  *
  * @author Javier Zapata <javierzapata82@gmail.com>
  * @license MIT
@@ -16,7 +16,6 @@ trait PricingInfoTrait
     /**
      * The price of the room for the stay. The value of this element should
      * reflect the following:
-     *
      * * For a private room, set the least expensive double-occupancy rate that
      *   you offer.
      * * For a shared room, leave empty and use <RoomBundle>.

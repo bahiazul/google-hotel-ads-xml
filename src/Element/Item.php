@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Bahiazul\Xml\GoogleHotelAds\Element;
 
 /**
- * Item
+ * Item.
  *
  * @author Javier Zapata <javierzapata82@gmail.com> (https://javi.io/)
  * @license MIT
@@ -17,7 +17,6 @@ class Item extends Base
      * The ID of a hotel, using the same ID as the Hotel List Feed. The number
      * of <Property> elements you can specify in a single <Item> block is
      * determined by the type of Hint Response message:
-     *
      * * Exact itineraries: Up to 100 hotels.
      * * Check-in ranges: More than one if you set <MultipleItineraries>
      *   to "checkin_range" in your <QueryControl> message.

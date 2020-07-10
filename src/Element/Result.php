@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Bahiazul\Xml\GoogleHotelAds\Element;
 
 /**
- * Result
+ * Result.
  *
  * @author Javier Zapata <javierzapata82@gmail.com> (https://javi.io/)
  * @license MIT
@@ -117,7 +117,6 @@ class Result extends Base
      * a Transaction message in the <Result> element for the Hotel Price or
      * <PackageData> block for a Room Bundle.
      * Valid values are:
-     *
      * * "web": The user is charged online at the time of booking. This is the
      *   default value. The actual landing page is defined by the landing page
      *   file, and can be affected by the user's currency, location, language,
@@ -149,7 +148,7 @@ class Result extends Base
      * room/itinerary combination. For example, you define multiple rates for
      * conditional rates, private rates, or conditional rates in Room Bundles).
      *
-     * @var Rates
+     * @var array
      */
     public $Rates = [];
 
@@ -198,14 +197,14 @@ class Result extends Base
         string $ChargeCurrency = null,
         int $Occupancy = null,
         OccupancyDetails $OccupancyDetails = null,
-        Rates $Rates = null,
+        array $Rates = null,
         array $RoomBundle = null,
-        AllowablePointsOfSale $AllowablePointsOfSale = null,
-        Custom1 $Custom1 = null,
-        Custom2 $Custom2 = null,
-        Custom3 $Custom3 = null,
-        Custom4 $Custom4 = null,
-        Custom5 $Custom5 = null
+        array $AllowablePointsOfSale = null,
+        string $Custom1 = null,
+        string $Custom2 = null,
+        string $Custom3 = null,
+        string $Custom4 = null,
+        string $Custom5 = null
     ) {
         $this->Property = $Property;
         $this->Checkin = $Checkin;

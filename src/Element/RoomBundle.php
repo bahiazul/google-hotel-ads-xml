@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Bahiazul\Xml\GoogleHotelAds\Element;
 
 /**
- * RoomBundle
+ * RoomBundle.
  *
  * @author Javier Zapata <javierzapata82@gmail.com> (https://javi.io/)
  * @license MIT
@@ -18,7 +18,7 @@ class RoomBundle extends Base
      * data with what you sent in <RoomData>. For more information, refer to
      * Room Bundle metadata. (You can also use this ID to reference a common
      * room definition in a single Transaction message when defining room data
-     * inline.)
+     * inline.).
      *
      * @var string
      */
@@ -29,7 +29,7 @@ class RoomBundle extends Base
      * data with what was sent in <PackageData>. For more information, refer to
      * Room Bundle metadata. (You can also use this ID to reference a common
      * Room Bundle definition used in a single Transaction message when defining
-     * Room Bundle data inline.)
+     * Room Bundle data inline.).
      *
      * @var string
      */
@@ -104,7 +104,7 @@ class RoomBundle extends Base
      * Rates that override the defaults for this Room Bundle. This element uses
      * the same syntax as <Rates> in <Result>.
      *
-     * @var Rates
+     * @var array
      */
     public $Rates = [];
 
@@ -120,12 +120,12 @@ class RoomBundle extends Base
         int $Occupancy = null,
         OccupancyDetails $OccupancyDetails = null,
         string $RatePlanID = null,
-        Rates $Rates = null,
-        Custom1 $Custom1 = null,
-        Custom2 $Custom2 = null,
-        Custom3 $Custom3 = null,
-        Custom4 $Custom4 = null,
-        Custom5 $Custom5 = null
+        array $Rates = null,
+        array $Custom1 = null,
+        array $Custom2 = null,
+        array $Custom3 = null,
+        array $Custom4 = null,
+        array $Custom5 = null
     ) {
         $this->RoomID = $RoomID;
         $this->PackageID = $PackageID;

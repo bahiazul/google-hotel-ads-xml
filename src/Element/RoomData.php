@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Bahiazul\Xml\GoogleHotelAds\Element;
 
 /**
- * RoomData
+ * RoomData.
  *
  * @author Javier Zapata <javierzapata82@gmail.com> (https://javi.io/)
  * @license MIT
@@ -18,7 +18,7 @@ class RoomData extends Base
      * <Result> blocks in your pricing updates. For more information, refer to
      * Room Bundle metadata. (You can also use this ID to reference a common
      * room definition in a single Transaction message when defining room data
-     * inline.)
+     * inline.).
      *
      * @var string
      */

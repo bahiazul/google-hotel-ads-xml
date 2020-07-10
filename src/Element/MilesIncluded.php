@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Bahiazul\Xml\GoogleHotelAds\Element;
 
 /**
- * MilesIncluded
+ * MilesIncluded.
  *
  * @author Javier Zapata <javierzapata82@gmail.com> (https://javi.io/)
  * @license MIT
@@ -14,14 +14,14 @@ namespace Bahiazul\Xml\GoogleHotelAds\Element;
 class MilesIncluded extends Base
 {
     /**
-     * Number of miles per itinerary
+     * Number of miles per itinerary.
      *
      * @var int
      */
     public $NumberofMiles;
 
     /**
-     * Frequent flyer miles provide
+     * Frequent flyer miles provide.
      *
      * @var LocalisedText
      */

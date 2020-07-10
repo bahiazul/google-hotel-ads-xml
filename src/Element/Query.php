@@ -77,7 +77,7 @@ class Query extends Base
      *     <Property>pid2</Property>
      *   </PropertyList>
      *
-     * @var Property[]
+     * @var string[]
      */
     public $PropertyList = [];
 
@@ -101,12 +101,11 @@ class Query extends Base
     /**
      * For Live Queries, specifies certain parameters under which the query is
      * made. Child elements include:
-     *
      * * <Occupancy>: the total number of guests
      * * <OccupancyDetails>: the type of guests, such as adults or children
      * * <UserCountry>: the country where the user is located
      * * <UserDevice>: the type of device the customer used to search for a
-     *   hotel, such as "mobile," "tablet," or "desktop."
+     *   hotel, such as "mobile," "tablet," or "desktop.".
      *
      * The <Context> element may be repeated in a single request, allowing
      * queries for different occupancies. Consult <Context> for a list of child
@@ -121,7 +120,7 @@ class Query extends Base
      * Bundle metadata in a metadata Query message. This element can contain one
      * or more <Property> elements that specify hotel property IDs.
      *
-     * @var Property[]
+     * @var string[]
      */
     public $HotelInfoProperties = [];
 }

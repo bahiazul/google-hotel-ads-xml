@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Bahiazul\Xml\GoogleHotelAds\Element;
 
 /**
- * MembershipBenefitsIncluded
+ * MembershipBenefitsIncluded.
  *
  * @author Javier Zapata <javierzapata82@gmail.com> (https://javi.io/)
  * @license MIT
@@ -14,14 +14,14 @@ namespace Bahiazul\Xml\GoogleHotelAds\Element;
 class MembershipBenefitsIncluded extends Base
 {
     /**
-     * Name of the elite status program
+     * Name of the elite status program.
      *
      * @var LocalisedText
      */
     public $ProgramName;
 
     /**
-     * Level of the program, e.g., “Gold.”
+     * Level of the program, e.g., “Gold”.
      *
      * @var LocalisedText
      */

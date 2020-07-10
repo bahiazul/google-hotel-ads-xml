@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Bahiazul\Xml\GoogleHotelAds\Element;
 
 /**
- * Base
+ * Base.
  *
  * @author Javier Zapata <javierzapata82@gmail.com> (https://javi.io/)
  * @license MIT
@@ -36,9 +36,8 @@ abstract class Base implements \Sabre\Xml\Element
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      *
-     * @param \Sabre\Xml\Writer $writer
      * @return void
      */
     public function xmlSerialize(\Sabre\Xml\Writer $writer)
@@ -51,20 +50,20 @@ abstract class Base implements \Sabre\Xml\Element
         $elements = array_filter($this->getElements());
         foreach ($elements as $key => $value) {
             $writer->write([
-                $ns . $key => $value,
+                $ns.$key => $value,
             ]);
         }
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      *
-     * @param Sabre\Xml\Reader $reader
      * @return void
      */
     public static function xmlDeserialize(\Sabre\Xml\Reader $reader)
     {
         $ns = '{}';
+        /** @phpstan-ignore-next-line */
         $object = new self();
 
         foreach ($reader->parseAttributes() as $key => $value) {
@@ -73,7 +72,7 @@ abstract class Base implements \Sabre\Xml\Element
             }
         }
 
-        $kvs = Sabre\Xml\Element\KeyValue::xmlDeserialize($reader);
+        $kvs = \Sabre\Xml\Element\KeyValue::xmlDeserialize($reader);
         foreach ($kvs as $key => $value) {
             $property = str_replace($ns, '', $key, 1);
             if (isset($value)) {

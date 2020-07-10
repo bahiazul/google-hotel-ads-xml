@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Bahiazul\Xml\GoogleHotelAds\Element;
 
 /**
- * Rate
+ * Rate.
  *
  * @author Javier Zapata <javierzapata82@gmail.com> (https://javi.io/)
  * @license MIT
@@ -108,14 +108,14 @@ class Rate extends Base
         Refundable $Refundable = null,
         string $ExpirationTime = null,
         string $ChargeCurrency = null,
-        AllowablePointsOfSale $AllowablePointsOfSale = null,
+        array $AllowablePointsOfSale = [],
         int $Occupancy = null,
         OccupancyDetails $OccupancyDetails = null,
-        Custom1 $Custom1 = null,
-        Custom2 $Custom2 = null,
-        Custom3 $Custom3 = null,
-        Custom4 $Custom4 = null,
-        Custom5 $Custom5 = null
+        string $Custom1 = null,
+        string $Custom2 = null,
+        string $Custom3 = null,
+        string $Custom4 = null,
+        string $Custom5 = null
     ) {
         $this->rate_rule_id = $rate_rule_id;
 

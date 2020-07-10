@@ -25,7 +25,7 @@ class Context extends Base
     /**
      * Filters rates by the country where user is located. The value is a
      * 2-letter country code such as “US” for United States, or a region code,
-     * such as "EU" for “Europe.”
+     * such as "EU" for “Europe”.
      *
      * Queries with <UserCountry> defined should result in a transaction message
      * with the appropriate <Rates> block defined for the queried country.
@@ -37,11 +37,9 @@ class Context extends Base
     /**
      * Filters rates by the type of the device the user is searching from.
      * Possible values:
-     *
      * * mobile
      * * desktop
      * * tablet
-     *
      * Queries with <UserDevice> defined should result in a transaction message
      * with the appropriate <Rates> block defined for the queried device type.
      *
