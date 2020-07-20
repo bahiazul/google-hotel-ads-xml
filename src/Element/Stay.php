@@ -26,4 +26,10 @@ class Stay extends Base
      * @var int
      */
     public $LengthOfStay;
+
+    public function __construct(string $CheckInDate = null, int $LengthOfStay = null)
+    {
+        $this->CheckInDate = $CheckInDate;
+        $this->LengthOfStay = $LengthOfStay;
+    }
 }

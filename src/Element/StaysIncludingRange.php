@@ -14,4 +14,10 @@ namespace Bahiazul\Xml\GoogleHotelAds\Element;
 class StaysIncludingRange extends Base
 {
     use DateRangeTrait;
+
+    public function __construct(string $FirstDate = null, string $LastDate = null)
+    {
+        $this->FirstDate = $FirstDate;
+        $this->LastDate = $LastDate;
+    }
 }

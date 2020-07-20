@@ -50,7 +50,7 @@ abstract class Base implements \Sabre\Xml\Element
         $elements = array_filter($this->getElements());
         foreach ($elements as $key => $value) {
             $writer->write([
-                $ns.$key => $value,
+                $ns . $key => $value,
             ]);
         }
     }
@@ -64,7 +64,7 @@ abstract class Base implements \Sabre\Xml\Element
     {
         $ns = '{}';
         /** @phpstan-ignore-next-line */
-        $object = new self();
+        $object = new static();
 
         foreach ($reader->parseAttributes() as $key => $value) {
             if (property_exists($object, $key)) {
@@ -74,7 +74,7 @@ abstract class Base implements \Sabre\Xml\Element
 
         $kvs = \Sabre\Xml\Element\KeyValue::xmlDeserialize($reader);
         foreach ($kvs as $key => $value) {
-            $property = str_replace($ns, '', $key, 1);
+            $property = str_replace($ns, '', $key);
             if (isset($value)) {
                 $object->{$property} = $value;
             }
