@@ -12,7 +12,7 @@ abstract class BaseTest extends \PHPUnit\Framework\TestCase
 
         $object = $service->parse($xml);
 
-        $this->assertEquals($compareObject, $object);
+        $this->assertEquals($object, $compareObject);
     }
 
     public function assertWrite($xml)
