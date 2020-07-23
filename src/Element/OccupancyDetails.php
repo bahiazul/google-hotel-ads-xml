@@ -16,7 +16,7 @@ class OccupancyDetails extends Base
     /**
      * The number of adult guests. Min:1, Max:20.
      *
-     * @var int
+     * @var string
      */
     public $NumAdults;
 
@@ -27,7 +27,7 @@ class OccupancyDetails extends Base
      */
     public $Children = [];
 
-    public function __construct(int $NumAdults = null, array $Children = null)
+    public function __construct(string $NumAdults = null, array $Children = null)
     {
         $this->NumAdults = $NumAdults;
         $this->Children = $Children;

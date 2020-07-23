@@ -26,7 +26,7 @@ abstract class MonetaryValue extends Base
      *
      * The default value is "false".
      *
-     * @var bool
+     * @var string
      */
     public $all_inclusive;
 
@@ -40,7 +40,7 @@ abstract class MonetaryValue extends Base
      */
     public $value;
 
-    public function __construct(string $currency = null, string $value = null, bool $all_inclusive = null)
+    public function __construct(string $currency = null, string $value = null, string $all_inclusive = null)
     {
         $this->currency = $currency;
         $this->value = $value;

@@ -109,7 +109,7 @@ class Rate extends Base
         string $ExpirationTime = null,
         string $ChargeCurrency = null,
         array $AllowablePointsOfSale = [],
-        int $Occupancy = null,
+        string $Occupancy = null,
         OccupancyDetails $OccupancyDetails = null,
         string $Custom1 = null,
         string $Custom2 = null,

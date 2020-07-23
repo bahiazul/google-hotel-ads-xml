@@ -38,7 +38,7 @@ class Query extends Base
      * query. To have Google send queries with the <LatencySensitive> attribute,
      * please send a request to your technical account manager.
      *
-     * @var bool
+     * @var string
      */
     public $latencySensitive;
 
@@ -52,7 +52,7 @@ class Query extends Base
     /**
      * The number of nights for a particular itinerary, up to 14.
      *
-     * @var int
+     * @var string
      */
     public $Nights;
 
@@ -62,7 +62,7 @@ class Query extends Base
      * The number of nights for a ranged stay. This element is used only for
      * Ranged Stay pricing queries used with Pull with Hints.
      *
-     * @var int
+     * @var string
      */
     public $AffectedNights;
 
@@ -94,7 +94,7 @@ class Query extends Base
      *
      * For more information, consult Live Queries.
      *
-     * @var int
+     * @var string
      */
     public $DeadlineMs;
 
@@ -123,4 +123,28 @@ class Query extends Base
      * @var string[]
      */
     public $HotelInfoProperties = [];
+
+    public function __construct(
+        string $latencySensitive = null,
+        string $Checkin = null,
+        string $Nights = null,
+        string $FirstDate = null,
+        string $LastDate = null,
+        string $AffectedNights = null,
+        array $PropertyList = null,
+        string $DeadlineMs = null,
+        array $Context = null,
+        array $HotelInfoProperties = null
+    ) {
+        $this->latencySensitive = $latencySensitive;
+        $this->Checkin = $Checkin;
+        $this->Nights = $Nights;
+        $this->FirstDate = $FirstDate;
+        $this->LastDate = $LastDate;
+        $this->AffectedNights = $AffectedNights;
+        $this->PropertyList = $PropertyList;
+        $this->DeadlineMs = $DeadlineMs;
+        $this->Context = $Context;
+        $this->HotelInfoProperties = $HotelInfoProperties;
+    }
 }

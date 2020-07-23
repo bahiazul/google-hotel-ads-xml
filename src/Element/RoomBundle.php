@@ -117,7 +117,7 @@ class RoomBundle extends Base
         MonetaryValue $Tax = null,
         MonetaryValue $OtherFees = null,
         Refundable $Refundable = null,
-        int $Occupancy = null,
+        string $Occupancy = null,
         OccupancyDetails $OccupancyDetails = null,
         string $RatePlanID = null,
         array $Rates = null,

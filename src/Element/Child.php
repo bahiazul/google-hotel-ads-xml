@@ -14,11 +14,11 @@ namespace Bahiazul\Xml\GoogleHotelAds\Element;
 class Child extends Base
 {
     /**
-     * @var int
+     * @var string
      */
     public $age;
 
-    public function __construct(int $age = null)
+    public function __construct(string $age = null)
     {
         $this->age = $age;
     }

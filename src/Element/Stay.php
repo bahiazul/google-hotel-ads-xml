@@ -23,11 +23,11 @@ class Stay extends Base
     /**
      * The number of nights for the itinerary, expressed as a positive integer.
      *
-     * @var int
+     * @var string
      */
     public $LengthOfStay;
 
-    public function __construct(string $CheckInDate = null, int $LengthOfStay = null)
+    public function __construct(string $CheckInDate = null, string $LengthOfStay = null)
     {
         $this->CheckInDate = $CheckInDate;
         $this->LengthOfStay = $LengthOfStay;

@@ -88,7 +88,7 @@ class RoomData extends Base
      * The value of <Capacity> must be a positive integer between 1 and 20,
      * inclusive.
      *
-     * @var int
+     * @var string
      */
     public $Capacity;
 
@@ -124,8 +124,8 @@ class RoomData extends Base
         string $RoomID = null,
         LocalisedText $Name = null,
         LocalisedText $Description = null,
-        int $Capacity = null,
-        int $Occupancy = null,
+        string $Capacity = null,
+        string $Occupancy = null,
         OccupancyDetails $OccupancyDetails = null,
         array $PhotoURL = null
     ) {

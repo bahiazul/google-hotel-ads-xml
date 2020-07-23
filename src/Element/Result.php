@@ -36,7 +36,7 @@ class Result extends Base
      * must be a positive integer. The combination of <Nights> and <Checkin>
      * make up an itinerary.
      *
-     * @var int
+     * @var string
      */
     public $Nights;
 
@@ -187,7 +187,7 @@ class Result extends Base
     public function __construct(
         string $Property = null,
         string $Checkin = null,
-        int $Nights = null,
+        string $Nights = null,
         MonetaryValue $Baserate = null,
         MonetaryValue $Tax = null,
         MonetaryValue $OtherFees = null,
@@ -195,7 +195,7 @@ class Result extends Base
         string $RoomID = null,
         string $ExpirationTime = null,
         string $ChargeCurrency = null,
-        int $Occupancy = null,
+        string $Occupancy = null,
         OccupancyDetails $OccupancyDetails = null,
         array $Rates = null,
         array $RoomBundle = null,

@@ -17,7 +17,7 @@ class Refundable extends Base
      * (Required) Set to 1 or true to indicate if the rate allows a full refund;
      * otherwise set to 0 or false.
      *
-     * @var bool
+     * @var string
      */
     public $available;
 
@@ -26,7 +26,7 @@ class Refundable extends Base
      * of check-in that a full refund can be requested. The value
      * of refundable_until_days must be an integer between 0 and 330, inclusive.
      *
-     * @var int
+     * @var string
      */
     public $refundable_until_days;
 
@@ -45,8 +45,8 @@ class Refundable extends Base
     public $refundable_until_time;
 
     public function __construct(
-        bool $available = null,
-        int $refundable_until_days = null,
+        string $available = null,
+        string $refundable_until_days = null,
         string $refundable_until_time = null
     ) {
         $this->available = $available;

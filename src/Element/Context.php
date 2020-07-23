@@ -48,7 +48,7 @@ class Context extends Base
     public $UserDevice;
 
     public function __construct(
-        int $Occupancy = null,
+        string $Occupancy = null,
         OccupancyDetails $OccupancyDetails = null,
         string $UserCountry = null,
         string $UserDevice = null

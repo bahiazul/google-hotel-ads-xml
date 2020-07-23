@@ -128,7 +128,7 @@ class PackageData extends Base
     /**
      * Specifies whether this Room Bundle includes breakfast with the rate.
      *
-     * @var bool
+     * @var string
      */
     public $BreakfastIncluded;
 
@@ -139,7 +139,7 @@ class PackageData extends Base
      * This element does not apply to in-room wired internet or wireless
      * internet that is not available in guest rooms.
      *
-     * @var bool
+     * @var string
      */
     public $InternetIncluded;
 
@@ -150,7 +150,7 @@ class PackageData extends Base
      * Valid values are 0 (or false) and 1 (or true). The default value
      * is false.
      *
-     * @var bool
+     * @var string
      */
     public $ParkingIncluded;
 
@@ -168,7 +168,7 @@ class PackageData extends Base
     /**
      * Rate includes free car rental for duration of stay.
      *
-     * @var bool
+     * @var string
      */
     public $CarRentalIncluded;
 
@@ -195,13 +195,13 @@ class PackageData extends Base
         LocalisedText $Description = null,
         Refundable $Refundable = null,
         string $ChargeCurrency = null,
-        int $Occupancy = null,
+        string $Occupancy = null,
         OccupancyDetails $OccupancyDetails = null,
-        bool $BreakfastIncluded = null,
-        bool $InternetIncluded = null,
-        bool $ParkingIncluded = null,
+        string $BreakfastIncluded = null,
+        string $InternetIncluded = null,
+        string $ParkingIncluded = null,
         MembershipBenefitsIncluded $MembershipBenefitsIncluded = null,
-        bool $CarRentalIncluded = null,
+        string $CarRentalIncluded = null,
         MilesIncluded $MilesIncluded = null,
         OnPropertyCredit $OnPropertyCredit = null
     ) {

@@ -38,7 +38,7 @@ trait OccupancyInfoTrait
      *   non-double occupancy prices. Contact your support team to enable this
      *   feature.
      *
-     * @var int
+     * @var string
      */
     public $Occupancy;
 

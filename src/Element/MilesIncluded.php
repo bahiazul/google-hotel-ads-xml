@@ -16,7 +16,7 @@ class MilesIncluded extends Base
     /**
      * Number of miles per itinerary.
      *
-     * @var int
+     * @var string
      */
     public $NumberofMiles;
 
@@ -27,7 +27,7 @@ class MilesIncluded extends Base
      */
     public $Provider;
 
-    public function __construct(int $NumberofMiles = null, LocalisedText $Provider = null)
+    public function __construct(string $NumberofMiles = null, LocalisedText $Provider = null)
     {
         $this->NumberofMiles = $NumberofMiles;
         $this->Provider = $Provider;
