@@ -18,11 +18,18 @@ class Service extends \Sabre\Xml\Service
         $gha = '{' . self::GHA_NS . '}';
 
         // Reading
-        $this->elementMap[$gha . 'Item'] = Element\Item::class;
-        $this->elementMap[$gha . 'Hint'] = function (\Sabre\Xml\Reader $reader) use ($gha) {
-            return \Sabre\Xml\Deserializer\repeatingElements($reader, $gha . 'Item');
+        $this->elementMap[$gha . 'Child'] = Element\Child::class;
+        $this->elementMap[$gha . 'Children'] = function (\Sabre\Xml\Reader $reader) use ($gha) {
+            return \Sabre\Xml\Deserializer\repeatingElements($reader, $gha . 'Child');
         };
-        $this->elementMap[$gha . 'HintRequest'] = Element\HintRequest::class;
+        $this->elementMap[$gha . 'Context'] = Element\Context::class;
+        $this->elementMap[$gha . 'HotelInfoProperties'] = function (\Sabre\Xml\Reader $reader) use ($gha) {
+            return \Sabre\Xml\Deserializer\repeatingElements($reader, $gha . 'Property');
+        };
+        $this->elementMap[$gha . 'OccupancyDetails'] = Element\OccupancyDetails::class;
+        $this->elementMap[$gha . 'PropertyList'] = function (\Sabre\Xml\Reader $reader) use ($gha) {
+            return \Sabre\Xml\Deserializer\repeatingElements($reader, $gha . 'Property');
+        };
         $this->elementMap[$gha . 'Query'] = Element\Query::class;
         $this->elementMap[$gha . 'Stay'] = Element\Stay::class;
         $this->elementMap[$gha . 'StaysIncludingRange'] = Element\StaysIncludingRange::class;
