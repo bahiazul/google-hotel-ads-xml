@@ -6,22 +6,22 @@ namespace Bahiazul\Xml\GoogleHotelAds;
 
 abstract class BaseTest extends \PHPUnit\Framework\TestCase
 {
-    public function assertRead($xml, $compareObject)
+    public function assertRead($xml, $compareObj)
     {
         $service = new Service();
 
-        $object = $service->parse($xml);
+        $obj = $service->parse($xml);
 
-        $this->assertEquals($object, $compareObject);
+        $this->assertEquals($obj, $compareObj);
     }
 
     public function assertWrite($xml)
     {
         $service = new Service();
 
-        $object = $service->parse($xml);
+        $obj = $service->parse($xml);
 
-        $newXml = $service->writeValueObject($object);
+        $newXml = $service->writeValueObject($obj);
         $this->assertXmlStringEqualsXmlString($xml, $newXml);
     }
 
@@ -29,12 +29,12 @@ abstract class BaseTest extends \PHPUnit\Framework\TestCase
      * Assets whether we can parse an xml feed and serialize it again and end
      * up with a similar structure.
      *
-     * If compareObject is specified, we'll also do a deep comparison of the
-     * parsed atom php object.
+     * If compareObj is specified, we'll also do a deep comparison of the
+     * parsed atom php obj.
      */
-    public function assertRoundTrip($xml, $compareObject = null)
+    public function assertRoundTrip($xml, $compareObj = null)
     {
-        $this->assertRead($xml, $compareObject);
+        $this->assertRead($xml, $compareObj);
         $this->assertWrite($xml);
     }
 }
