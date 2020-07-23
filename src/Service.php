@@ -36,5 +36,6 @@ class Service extends \Sabre\Xml\Service
 
         // Writing
         $this->mapValueObject($gha . 'Transaction', Element\Transaction::class);
+        $this->elementMap[$gha . 'Transaction'] = Element\Transaction::class;
     }
 }
