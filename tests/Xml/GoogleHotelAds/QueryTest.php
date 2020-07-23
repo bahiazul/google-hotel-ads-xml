@@ -25,10 +25,10 @@ class QueryTest extends BaseTest
 </Query>
 XML;
 
-        $query = new Element\Query(null, '2018-06-10', '3');
-        $query->PropertyList = ['pid5', 'pid8', 'pid13', 'pid21'];
+        $obj = new Element\Query(null, '2018-06-10', '3');
+        $obj->PropertyList = ['pid5', 'pid8', 'pid13', 'pid21'];
 
-        $this->assertRead($xml, $query);
+        $this->assertRead($xml, $obj);
     }
 
     /**
@@ -60,13 +60,13 @@ XML;
 </Query>
 XML;
 
-        $query = new Element\Query('true', '2017-06-07', '5');
-        $query->DeadlineMs = '500';
-        $query->PropertyList = ['8675309'];
+        $obj = new Element\Query('true', '2017-06-07', '5');
+        $obj->DeadlineMs = '500';
+        $obj->PropertyList = ['8675309'];
         $occupancyDetails = new Element\OccupancyDetails('2', [new Element\Child('8'), new Element\Child('5')]);
-        $query->Context = new Element\Context('4', $occupancyDetails, 'US', 'mobile');
+        $obj->Context = new Element\Context('4', $occupancyDetails, 'US', 'mobile');
 
-        $this->assertRead($xml, $query);
+        $this->assertRead($xml, $obj);
     }
 
     /**
@@ -86,9 +86,9 @@ XML;
 </Query>
 XML;
 
-        $query = new Element\Query();
-        $query->HotelInfoProperties = ['pid5', 'pid8', 'pid13', 'pid21'];
+        $obj = new Element\Query();
+        $obj->HotelInfoProperties = ['pid5', 'pid8', 'pid13', 'pid21'];
 
-        $this->assertRead($xml, $query);
+        $this->assertRead($xml, $obj);
     }
 }
