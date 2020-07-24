@@ -42,6 +42,7 @@ class TransactionTest extends BaseTest
                 <Text text="One king bed with pillowtop mattresses, 300-thread-count linens, and down comforters (bedspreads). City view. 300 square feet. Desk with rolling chair. Multi-line phone with voice mail. Cable/satellite TV with complimentary HBO and pay movies." language="en"/>
                 <Text text="Un très grand lit avec matelas à plateau-coussin, ..." language="fr"/>
             </Description>
+            <Capacity>4</Capacity>
             <PhotoURL>
                 <Caption>
                     <Text text="Bathroom View" language="en"/>
@@ -49,7 +50,6 @@ class TransactionTest extends BaseTest
                 </Caption>
                 <URL>http://www.foo.com/static/bar/image1234.jpg</URL>
             </PhotoURL>
-            <Capacity>4</Capacity>
         </RoomData>
     </PropertyDataSet>
 </Transaction>
@@ -109,6 +109,7 @@ XML;
                 <Text text="One king bed with pillowtop mattresses, 300-thread-count linens, and down comforters (bedspreads). City view. 300 square feet. Desk with rolling chair. Multi-line phone with voice mail. Cable/satellite TV with complimentary HBO and pay movies." language="en"/>
                 <Text text="Un très grand lit avec matelas à plateau-coussin, ..." language="fr"/>
             </Description>
+            <Capacity>4</Capacity>
             <PhotoURL>
                 <Caption>
                     <Text text="Bathroom View" language="en"/>
@@ -116,7 +117,6 @@ XML;
                 </Caption>
                 <URL>http://www.foo.com/static/bar/image1234.jpg</URL>
             </PhotoURL>
-            <Capacity>4</Capacity>
         </RoomData>
     </PropertyDataSet>
 </Transaction>
@@ -177,6 +177,7 @@ XML;
                 <Text text="A single room" language="en"/>
                 <Text text="Le chambre simple" language="fr"/>
             </Description>
+            <Capacity>2</Capacity>
             <PhotoURL>
                 <Caption>
                     <Text text="Living area" language="en"/>
@@ -187,7 +188,6 @@ XML;
             <PhotoURL>
                 <URL>http://www.foo.com/static/bar/image1235.jpg</URL>
             </PhotoURL>
-            <Capacity>2</Capacity>
         </RoomData>
         <RoomData>
             <RoomID>double</RoomID>
@@ -207,8 +207,8 @@ XML;
                 <Text text="Continental Breakfast" language="en"/>
                 <Text text="Petit déjeuner continental" language="fr"/>
             </Description>
-            <ChargeCurrency>hotel</ChargeCurrency>
             <Refundable available="1" refundable_until_days="3"/>
+            <ChargeCurrency>hotel</ChargeCurrency>
             <BreakfastIncluded>1</BreakfastIncluded>
         </PackageData>
         <PackageData>
@@ -221,9 +221,9 @@ XML;
                 <Text text="Blah blah blad" language="en"/>
                 <Text text="Le blah blah blad" language="fr"/>
             </Description>
-            <Occupancy>2</Occupancy>
-            <ChargeCurrency>web</ChargeCurrency>
             <Refundable available="0"/>
+            <ChargeCurrency>web</ChargeCurrency>
+            <Occupancy>2</Occupancy>
         </PackageData>
     </PropertyDataSet>
 </Transaction>
