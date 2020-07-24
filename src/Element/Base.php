@@ -44,10 +44,14 @@ abstract class Base implements \Sabre\Xml\Element
     {
         $ns = '{}';
 
-        $attributes = array_filter($this->getAttributes());
+        $attributes = array_filter($this->getAttributes(), function ($v) {
+            return !is_null($v);
+        });
         $writer->writeAttributes($attributes);
 
-        $elements = array_filter($this->getElements());
+        $elements = array_filter($this->getElements(), function ($v) {
+            return !is_null($v);
+        });
         foreach ($elements as $key => $value) {
             $writer->write([
                 $ns . $key => $value,
