@@ -17,25 +17,25 @@ class Service extends \Sabre\Xml\Service
         $this->namespaceMap[self::GHA_NS] = self::GHA_DEFAULT_PREFIX;
         $gha = '{' . self::GHA_NS . '}';
 
-        // Reading
-        $this->elementMap[$gha . 'Child'] = Element\Child::class;
-        $this->elementMap[$gha . 'Children'] = function (\Sabre\Xml\Reader $reader) use ($gha) {
-            return \Sabre\Xml\Deserializer\repeatingElements($reader, $gha . 'Child');
-        };
-        $this->elementMap[$gha . 'Context'] = Element\Context::class;
-        $this->elementMap[$gha . 'HotelInfoProperties'] = function (\Sabre\Xml\Reader $reader) use ($gha) {
-            return \Sabre\Xml\Deserializer\repeatingElements($reader, $gha . 'Property');
-        };
-        $this->elementMap[$gha . 'OccupancyDetails'] = Element\OccupancyDetails::class;
-        $this->elementMap[$gha . 'PropertyList'] = function (\Sabre\Xml\Reader $reader) use ($gha) {
-            return \Sabre\Xml\Deserializer\repeatingElements($reader, $gha . 'Property');
-        };
-        $this->elementMap[$gha . 'Query'] = Element\Query::class;
-        $this->elementMap[$gha . 'Stay'] = Element\Stay::class;
-        $this->elementMap[$gha . 'StaysIncludingRange'] = Element\StaysIncludingRange::class;
+        $this->mapValueObject($gha . 'Children', Element\Children::class);
+        $this->mapValueObject($gha . 'Context', Element\Context::class);
+        $this->mapValueObject($gha . 'Hint', Element\Hint::class);
+        $this->mapValueObject($gha . 'HotelInfoProperties', Element\PropertyList::class);
+        $this->mapValueObject($gha . 'OccupancyDetails', Element\OccupancyDetails::class);
+        $this->mapValueObject($gha . 'PackageData', Element\PackageData::class);
+        $this->mapValueObject($gha . 'PropertyDataSet', Element\PropertyDataSet::class);
+        $this->mapValueObject($gha . 'PropertyList', Element\PropertyList::class);
+        $this->mapValueObject($gha . 'Rate', Element\Rate::class);
+        $this->mapValueObject($gha . 'Result', Element\Result::class);
+        $this->mapValueObject($gha . 'RoomBundle', Element\RoomBundle::class);
+        $this->mapValueObject($gha . 'RoomData', Element\RoomData::class);
+        $this->mapValueObject($gha . 'Stay', Element\Stay::class);
+        $this->mapValueObject($gha . 'StaysIncludingRange', Element\StaysIncludingRange::class);
 
-        // Writing
-        $this->mapValueObject($gha . 'Transaction', Element\Transaction::class);
+        $this->elementMap[$gha . 'Child'] = Element\Child::class;
+        $this->elementMap[$gha . 'HintRequest'] = Element\HintRequest::class;
+        $this->elementMap[$gha . 'Query'] = Element\Query::class;
+        $this->elementMap[$gha . 'Refundable'] = Element\Refundable::class;
         $this->elementMap[$gha . 'Transaction'] = Element\Transaction::class;
     }
 }

@@ -12,7 +12,7 @@ class TransactionTest extends BaseTest
      */
     public function testMetadataTransaction($xml)
     {
-        $this->assertWrite($xml);
+        $this->assertWrite('Transaction', $xml);
     }
 
     /**
@@ -21,7 +21,7 @@ class TransactionTest extends BaseTest
      */
     public function testPricingTransaction($xml)
     {
-        $this->assertWrite($xml);
+        $this->assertWrite('Transaction', $xml);
     }
 
     public function metadataProvider()

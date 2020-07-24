@@ -23,11 +23,11 @@ class OccupancyDetails extends Base
     /**
      * Whether any guests are children.
      *
-     * @var Child[]
+     * @var Children
      */
-    public $Children = [];
+    public $Children;
 
-    public function __construct(string $NumAdults = null, array $Children = null)
+    public function __construct(string $NumAdults = null, Children $Children = null)
     {
         $this->NumAdults = $NumAdults;
         $this->Children = $Children;
