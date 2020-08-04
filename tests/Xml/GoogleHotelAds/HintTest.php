@@ -31,18 +31,7 @@ class HintTest extends BaseTest
 </Hint>
 XML;
 
-        $item1 = new Element\Item();
-        $item1->Property = ['12345'];
-        $item1->Stay = new Element\Stay('2018-07-03', 3);
-
-        $item2 = new Element\Item();
-        $item2->Property = ['67890'];
-        $item2->Stay = new Element\Stay('2018-07-05', 4);
-
-        $hint = new Element\Hint();
-        $hint->Item = [$item1, $item2];
-
-        $this->assertRead($xml, $hint);
+        $this->assertRoundTrip($xml);
     }
 
     /**
@@ -62,15 +51,7 @@ XML;
 </Hint>
 XML;
 
-        $item = new Element\Item();
-        $item->Property = ['12345', '67890'];
-        $item->FirstDate = '2018-07-03';
-        $item->LastDate = '2018-07-06';
-
-        $hint = new Element\Hint();
-        $hint->Item = [$item];
-
-        $this->assertRead($xml, $hint);
+        $this->assertRoundTrip($xml);
     }
 
     /**
@@ -97,17 +78,6 @@ XML;
 </Hint>
 XML;
 
-        $item1 = new Element\Item();
-        $item1->Property = ['12345'];
-        $item1->StaysIncludingRange = new Element\StaysIncludingRange('2018-07-03', '2018-07-06');
-
-        $item2 = new Element\Item();
-        $item2->Property = ['67890'];
-        $item2->StaysIncludingRange = new Element\StaysIncludingRange('2018-07-05');
-
-        $hint = new Element\Hint();
-        $hint->Item = [$item1, $item2];
-
-        $this->assertRead($xml, $hint);
+        $this->assertRoundTrip($xml);
     }
 }

@@ -17,6 +17,7 @@ class Service extends \Sabre\Xml\Service
         $this->namespaceMap[self::GHA_NS] = self::GHA_DEFAULT_PREFIX;
         $gha = '{' . self::GHA_NS . '}';
 
+        $this->mapValueObject($gha . 'AllowablePointsOfSale', Element\PointOfSaleList::class);
         $this->mapValueObject($gha . 'Caption', Element\LocalisedText::class);
         $this->mapValueObject($gha . 'Child', Element\Child::class);
         $this->mapValueObject($gha . 'Children', Element\Children::class);

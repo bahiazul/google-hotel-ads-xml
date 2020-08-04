@@ -7,21 +7,21 @@ namespace Bahiazul\Xml\GoogleHotelAds;
 class TransactionTest extends BaseTest
 {
     /**
-     * @covers          Element\Transaction
+     * @covers          \Bahiazul\Xml\GoogleHotelAds\Element\Transaction
      * @dataProvider    metadataProvider
      */
     public function testMetadataTransaction($xml)
     {
-        $this->assertWrite('Transaction', $xml);
+        $this->assertRoundTrip($xml);
     }
 
     /**
-     * @covers          Element\Transaction
+     * @covers          \Bahiazul\Xml\GoogleHotelAds\Element\Transaction
      * @dataProvider    pricingProvider
      */
     public function testPricingTransaction($xml)
     {
-        $this->assertWrite('Transaction', $xml);
+        $this->assertRoundTrip($xml);
     }
 
     public function metadataProvider()

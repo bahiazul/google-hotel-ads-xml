@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 require __DIR__ . '/../vendor/autoload.php';
 
+use Bahiazul\Xml\GoogleHotelAds\Service;
+
 $input = <<<XML
 <?xml version="1.0" encoding="UTF-8"?>
 <Query>
@@ -45,5 +47,11 @@ $input = <<<XML
 </Query>
 XML;
 
-$service = new Bahiazul\Xml\GoogleHotelAds\Service();
-print_r($service->parse($input));
+$service = new Service();
+$service->namespaceMap[Service::GHA_NS] = '';
+$obj = $service->parse($input, null, $elementName);
+
+$xml = $service->writeValueObject($elementName, $obj);
+
+print_r($obj);
+echo $xml;

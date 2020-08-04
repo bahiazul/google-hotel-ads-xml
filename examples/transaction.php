@@ -4,10 +4,11 @@ declare(strict_types=1);
 
 require __DIR__ . '/../vendor/autoload.php';
 
+use Bahiazul\Xml\GoogleHotelAds\Service;
+
 $input = <<<XML
 <?xml version="1.0" encoding="UTF-8"?>
 <Transaction timestamp="2017-07-18T16:20:00-04:00" id="42">
-    <!-- A transaction message with room types result. -->
     <PropertyDataSet>
         <Property>12345</Property>
         <RoomData>
@@ -69,13 +70,60 @@ $input = <<<XML
             <Occupancy>2</Occupancy>
         </PackageData>
     </PropertyDataSet>
+    <Result>
+        <Property>1234</Property>
+        <Checkin>2018-06-10</Checkin>
+        <Nights>1</Nights>
+
+        <Baserate currency="USD">200.00</Baserate>
+        <Tax currency="USD">20.00</Tax>
+        <OtherFees currency="USD">1.00</OtherFees>
+
+        <Rates>
+            <!-- The rate_rule_id is required when using conditional rates -->
+            <Rate rate_rule_id="mobile">
+                <!-- Override base rate and taxes for conditional rates -->
+                <Baserate currency="USD">180.00</Baserate>
+                <Tax currency="USD">18.00</Tax>
+                <!-- NOTE: OtherFees is inherited from the above setting -->
+                <Custom1>ratecode123</Custom1>
+            </Rate>
+        </Rates>
+
+    </Result>
+    <Result>
+        <Property>060773</Property>
+        <RoomID>RoomType101</RoomID>
+        <Checkin>2018-06-10</Checkin>
+        <Nights>2</Nights>
+        <Baserate currency="USD">278.33</Baserate>
+        <Tax currency="USD">25.12</Tax>
+        <OtherFees currency="USD">2.00</OtherFees>
+        <AllowablePointsOfSale>
+            <PointOfSale id="site1"/>
+        </AllowablePointsOfSale>
+    </Result>
+    <Result>
+        <Property>052213</Property>
+        <RoomID>RoomType101</RoomID>
+        <Checkin>2018-06-10</Checkin>
+        <Nights>2</Nights>
+        <Baserate currency="USD">299.98</Baserate>
+        <Tax currency="USD">26.42</Tax>
+        <OtherFees currency="USD">2.00</OtherFees>
+        <AllowablePointsOfSale>
+            <PointOfSale id="otto"/>
+            <PointOfSale id="simon"/>
+        </AllowablePointsOfSale>
+    </Result>
 </Transaction>
 XML;
 
-$service = new Bahiazul\Xml\GoogleHotelAds\Service();
-$fqen = '{' . Bahiazul\Xml\GoogleHotelAds\Service::GHA_NS . '}' . 'Transaction';
-$obj = $service->parse($input);
+$service = new Service();
+$service->namespaceMap[Service::GHA_NS] = '';
+$obj = $service->parse($input, null, $elementName);
 
-$xml = $service->write($fqen, $obj);
+$xml = $service->write($elementName, $obj);
+
+print_r($obj);
 echo $xml;
-// print_r($obj);

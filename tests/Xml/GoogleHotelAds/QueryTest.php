@@ -25,10 +25,7 @@ class QueryTest extends BaseTest
 </Query>
 XML;
 
-        $obj = new Element\Query(null, '2018-06-10', '3');
-        $obj->PropertyList = new Element\PropertyList(['pid5', 'pid8', 'pid13', 'pid21']);
-
-        $this->assertRead($xml, $obj);
+        $this->assertRoundTrip($xml);
     }
 
     /**
@@ -60,14 +57,7 @@ XML;
 </Query>
 XML;
 
-        $obj = new Element\Query('true', '2017-06-07', '5');
-        $obj->DeadlineMs = '500';
-        $obj->PropertyList = new Element\PropertyList(['8675309']);
-        $children = new Element\Children([new Element\Child('8'), new Element\Child('5')]);
-        $occupancyDetails = new Element\OccupancyDetails('2', $children);
-        $obj->Context = new Element\Context('4', $occupancyDetails, 'US', 'mobile');
-
-        $this->assertRead($xml, $obj);
+        $this->assertRoundTrip($xml);
     }
 
     /**
@@ -87,9 +77,6 @@ XML;
 </Query>
 XML;
 
-        $obj = new Element\Query();
-        $obj->HotelInfoProperties = new Element\PropertyList(['pid5', 'pid8', 'pid13', 'pid21']);
-
-        $this->assertRead($xml, $obj);
+        $this->assertRoundTrip($xml);
     }
 }

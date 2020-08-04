@@ -18,11 +18,6 @@ class HintRequestTest extends BaseTest
 </HintRequest>
 XML;
 
-        $hintRequest = new Element\HintRequest();
-        $hintRequest->id = 'ABCDEF';
-        $hintRequest->timestamp = '2018-06-07T16:20:00Z';
-        $hintRequest->LastFetchTime = '2018-03-25T00:04:09Z';
-
-        $this->assertRead($xml, $hintRequest);
+        $this->assertRoundTrip($xml);
     }
 }

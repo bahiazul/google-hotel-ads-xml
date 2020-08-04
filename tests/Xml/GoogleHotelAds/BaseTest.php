@@ -6,23 +6,18 @@ namespace Bahiazul\Xml\GoogleHotelAds;
 
 abstract class BaseTest extends \PHPUnit\Framework\TestCase
 {
-    public function assertRead($xml, $compareObj)
+    public function assertRoundTrip($xml, $compareObject = null)
     {
         $service = new Service();
+        $service->namespaceMap[Service::GHA_NS] = '';
 
-        $obj = $service->parse($xml);
+        $object = $service->parse($xml, null, $elementName);
 
-        $this->assertEquals($obj, $compareObj);
-    }
+        if (!is_null($compareObject)) {
+            $this->assertEquals($compareObject, $object);
+        }
 
-    public function assertWrite($elementName, $xml)
-    {
-        $service = new Service();
-
-        $fqen = '{' . Service::GHA_NS . '}' . $elementName;
-        $obj = $service->parse($xml);
-
-        $newXml = $service->write($fqen, $obj);
+        $newXml = $service->write($elementName, $object);
         $this->assertXmlStringEqualsXmlString($xml, $newXml);
     }
 }
