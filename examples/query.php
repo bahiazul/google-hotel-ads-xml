@@ -51,7 +51,7 @@ $service = new Service();
 $service->namespaceMap[Service::GHA_NS] = '';
 $obj = $service->parse($input, null, $elementName);
 
-$xml = $service->writeValueObject($elementName, $obj);
+$xml = $service->write($elementName, $obj);
 
 print_r($obj);
 echo $xml;
