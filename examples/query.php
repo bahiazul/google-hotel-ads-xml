@@ -13,6 +13,7 @@ $input = <<<XML
 	<Nights>4</Nights>
 	<PropertyList>
 		<Property>my-hotel</Property>
+		<Property>my-hotel-2</Property>
 	</PropertyList>
 	<DeadlineMs>500</DeadlineMs>
 	<Context>
