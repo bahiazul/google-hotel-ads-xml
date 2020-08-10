@@ -13,22 +13,34 @@ namespace Bahiazul\Xml\GoogleHotelAds\Element;
  */
 abstract class Base implements \Sabre\Xml\Element
 {
-    private function getAttributes()
+    /**
+     * Return the XML attributes of the object
+     *
+     * @return array
+     */
+    private function getAttributes(): array
     {
         return array_filter(
             get_object_vars($this),
             function ($k) {
+                // All attribute names start with a lowercase letter
                 return $k[0] >= 'a';
             },
             ARRAY_FILTER_USE_KEY
         );
     }
 
-    private function getElements()
+    /**
+     * Return the XML elements of the object
+     *
+     * @return array
+     */
+    private function getElements(): array
     {
         return array_filter(
             get_object_vars($this),
             function ($k) {
+                // All element names start with an uppercase letter
                 return $k[0] < 'a';
             },
             ARRAY_FILTER_USE_KEY
@@ -52,6 +64,7 @@ abstract class Base implements \Sabre\Xml\Element
         $elements = array_filter($this->getElements(), function ($v) {
             return !is_null($v);
         });
+
         foreach ($elements as $key => $value) {
             $writer->write([
                 $ns . $key => $value,
