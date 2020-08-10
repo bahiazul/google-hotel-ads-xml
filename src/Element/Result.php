@@ -178,9 +178,9 @@ class Result extends Base
      * landing pages file are considered eligible to be used for booking the
      * room. For more information, refer to Landing Pages File Syntax.
      *
-     * @var PointOfSale[]
+     * @var PointOfSaleList
      */
-    public $AllowablePointsOfSale = [];
+    public $AllowablePointsOfSale;
 
     use CustomInfoTrait;
 
@@ -199,7 +199,7 @@ class Result extends Base
         OccupancyDetails $OccupancyDetails = null,
         array $Rates = null,
         array $RoomBundle = null,
-        array $AllowablePointsOfSale = null,
+        PointOfSaleList $AllowablePointsOfSale = null,
         string $Custom1 = null,
         string $Custom2 = null,
         string $Custom3 = null,

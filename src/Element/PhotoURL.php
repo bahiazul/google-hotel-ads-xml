@@ -21,7 +21,7 @@ class PhotoURL extends Base
      *
      * @var LocalisedText
      */
-    public $Caption = [];
+    public $Caption;
 
     /**
      * Specifies the location of the photo. The location should be public

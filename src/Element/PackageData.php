@@ -43,7 +43,7 @@ class PackageData extends Base
      *
      * @var LocalisedText
      */
-    public $Name = [];
+    public $Name;
 
     /**
      * A detailed description of the package. This element should contain
@@ -63,7 +63,7 @@ class PackageData extends Base
      *
      * @var LocalisedText
      */
-    public $Description = [];
+    public $Description;
 
     /**
      * Enables listing a rate as being fully refundable or providing a free

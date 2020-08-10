@@ -16,7 +16,7 @@ class PointOfSaleList extends Base
     /**
      * PointOfSale.
      *
-     * @var string[]
+     * @var PointOfSale[]
      */
     public $PointOfSale = [];
 

@@ -77,9 +77,9 @@ class Query extends Base
      *     <Property>pid2</Property>
      *   </PropertyList>
      *
-     * @var string[]
+     * @var PropertyList
      */
-    public $PropertyList = [];
+    public $PropertyList;
 
     /**
      * The amount of time, in milliseconds, that you have to respond to a Live
@@ -131,7 +131,7 @@ class Query extends Base
         string $FirstDate = null,
         string $LastDate = null,
         string $AffectedNights = null,
-        array $PropertyList = null,
+        PropertyList $PropertyList = null,
         string $DeadlineMs = null,
         array $Context = null,
         array $HotelInfoProperties = null
