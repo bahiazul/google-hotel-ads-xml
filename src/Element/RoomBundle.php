@@ -120,12 +120,12 @@ class RoomBundle extends Base
         string $Occupancy = null,
         OccupancyDetails $OccupancyDetails = null,
         string $RatePlanID = null,
-        array $Rates = null,
-        array $Custom1 = null,
-        array $Custom2 = null,
-        array $Custom3 = null,
-        array $Custom4 = null,
-        array $Custom5 = null
+        array $Rates = [],
+        string $Custom1 = null,
+        string $Custom2 = null,
+        string $Custom3 = null,
+        string $Custom4 = null,
+        string $Custom5 = null
     ) {
         $this->RoomID = $RoomID;
         $this->PackageID = $PackageID;
