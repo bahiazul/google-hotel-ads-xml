@@ -46,7 +46,7 @@ class PropertyDataSet extends Base
      */
     public $PackageData = [];
 
-    public function __construct(string $Property = null, array $RoomData = null, array $PackageData = null)
+    public function __construct(string $Property = null, array $RoomData = [], array $PackageData = [])
     {
         $this->Property = $Property;
         $this->RoomData = $RoomData;

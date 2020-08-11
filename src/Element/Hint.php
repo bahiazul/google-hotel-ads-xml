@@ -42,7 +42,7 @@ class Hint extends Base
      */
     public $Item = [];
 
-    public function __construct(array $Item = null)
+    public function __construct(array $Item = [])
     {
         $this->Item = $Item;
     }

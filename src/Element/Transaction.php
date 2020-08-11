@@ -69,7 +69,7 @@ class Transaction extends Base
         string $timestamp = null,
         string $partner = null,
         PropertyDataSet $PropertyDataSet = null,
-        array $Result = null
+        array $Result = []
     ) {
         $this->id = $id;
         $this->timestamp = $timestamp;

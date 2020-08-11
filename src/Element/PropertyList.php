@@ -20,7 +20,7 @@ class PropertyList extends Base
      */
     public $Property = [];
 
-    public function __construct(array $Property = null)
+    public function __construct(array $Property = [])
     {
         $this->Property = $Property;
     }

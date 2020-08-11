@@ -20,7 +20,7 @@ class Children extends Base
      */
     public $Child = [];
 
-    public function __construct(array $Child = null)
+    public function __construct(array $Child = [])
     {
         $this->Child = $Child;
     }

@@ -133,8 +133,8 @@ class Query extends Base
         string $AffectedNights = null,
         PropertyList $PropertyList = null,
         string $DeadlineMs = null,
-        array $Context = null,
-        array $HotelInfoProperties = null
+        array $Context = [],
+        array $HotelInfoProperties = []
     ) {
         $this->latencySensitive = $latencySensitive;
         $this->Checkin = $Checkin;

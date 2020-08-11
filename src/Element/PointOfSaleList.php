@@ -20,7 +20,7 @@ class PointOfSaleList extends Base
      */
     public $PointOfSale = [];
 
-    public function __construct(array $PointOfSale = null)
+    public function __construct(array $PointOfSale = [])
     {
         $this->PointOfSale = $PointOfSale;
     }

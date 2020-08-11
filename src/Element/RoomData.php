@@ -127,7 +127,7 @@ class RoomData extends Base
         string $Capacity = null,
         string $Occupancy = null,
         OccupancyDetails $OccupancyDetails = null,
-        array $PhotoURL = null
+        array $PhotoURL = []
     ) {
         $this->RoomID = $RoomID;
         $this->Name = $Name;
