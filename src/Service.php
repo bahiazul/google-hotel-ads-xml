@@ -33,8 +33,11 @@ class Service extends \Sabre\Xml\Service
         $this->mapValueObject($gha . 'PackageData', Element\PackageData::class);
         $this->mapValueObject($gha . 'PhotoURL', Element\PhotoURL::class);
         $this->mapValueObject($gha . 'PointOfSale', Element\PointOfSale::class);
+        $this->mapValueObject($gha . 'ProgramLevel', Element\LocalisedText::class);
+        $this->mapValueObject($gha . 'ProgramName', Element\LocalisedText::class);
         $this->mapValueObject($gha . 'PropertyDataSet', Element\PropertyDataSet::class);
         $this->mapValueObject($gha . 'PropertyList', Element\PropertyList::class);
+        $this->mapValueObject($gha . 'Provider', Element\LocalisedText::class);
         $this->mapValueObject($gha . 'Query', Element\Query::class);
         $this->mapValueObject($gha . 'Rate', Element\Rate::class);
         $this->mapValueObject($gha . 'Result', Element\Result::class);
